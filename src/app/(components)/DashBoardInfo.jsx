@@ -1,11 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { fetchEventos, fetchOraciones, fetchPayments } from '../lib/data'
-import { CargarImagen } from './CargarEvento'
-import Image from 'next/image'
-import ModalEvento from './ModalEvento'
-import { Usuarios } from './Usuarios'
 import { UsuariosAdm } from './UsuariosAdm'
 import { PreciosPlanes } from './PreciosPlanes'
 import { Ingresos } from './Ingresos'
@@ -14,11 +9,7 @@ import { ControlIngresos } from './ControlIngresos'
 
 const DashBoardInfo = ({ tipo }) => {
 
-
-
     const [contenido, setContenido] = useState()
-    const [showModal, setShowModal] = useState(false)
-    const [idEvento, setIdEvento] = useState()
 
     useEffect(() => {
 
