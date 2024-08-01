@@ -1,14 +1,10 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { EliminarEvento, fetchEventos, fetchEventosEspeciales } from '../lib/data'
-import { CargarEvento } from './CargarEvento'
 import Image from 'next/image'
 import ModalEvento from './ModalEvento'
 import { TbCalendarPlus } from "react-icons/tb";
-import { createBrowserClient } from '@supabase/ssr'
 import { supabaseClient } from '@/supabase/client'
-import { toast } from 'sonner'
 import { ModalConfirmar } from './ModalConfirmar'
 import { ModalBanner } from './ModalBanner'
 
