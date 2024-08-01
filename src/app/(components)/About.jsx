@@ -48,19 +48,19 @@ export default function About() {
                                 <AvatarImage src="/placeholder-user.jpg" />
                                 <AvatarFallback>JD</AvatarFallback>
                             </Avatar> */}
-                            <Image width={400} height={400} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
+                            <Image width={400} height={400} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-4.jpg"
                                 alt="John Michael" class="relative inline-block   rounded-full object-cover object-center h-[65%] w-[65%]" />
                             <h3 className="text-xl font-semibold text-gray-600">John Doe</h3>
                             <p className="text-muted-foreground text-gray-600">Co-Founder & CEO</p>
                         </div>
                         <div className="flex flex-col items-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                            <Image width={0} height={0} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
+                            <Image width={400} height={400} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-5.jpg"
                                 alt="John Michael" class="relative inline-block   rounded-full object-cover object-center h-[65%] w-[65%]" />
                             <h3 className="text-xl font-semibold text-gray-600">Jane Appleseed</h3>
                             <p className="text-muted-foreground text-gray-600">Co-Founder & CTO</p>
                         </div>
                         <div className="flex flex-col items-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
-                            <Image width={0} height={0} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
+                            <Image width={400} height={400} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-6.jpg"
                                 alt="John Michael" class="relative inline-block   rounded-full object-cover object-center h-[65%] w-[65%]" />
                             <h3 className="text-xl font-semibold text-gray-600">Sarah Musk</h3>
                             <p className="text-muted-foreground text-gray-600">Lead Designer</p>
