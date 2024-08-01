@@ -12,6 +12,7 @@ import { FaCircleCheck } from "react-icons/fa6";
 import ModalPlan from "./ModalPlan";
 import { actualizarNotificacion } from "../action";
 import moment from "moment";
+import Image from "next/image";
 
 
 const Accordion = ({ usuario }) => {
@@ -151,7 +152,7 @@ const Accordion = ({ usuario }) => {
         className="flex justify-between w-full  text-black "
       >
         <div class="flex items-center gap-3 text-white">
-          <img width={0} height={0} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
+          <Image width={0} height={0} src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/team-3.jpg"
             alt="John Michael" class="relative inline-block h-9 w-9 !rounded-full object-cover object-center" />
           <div class="flex flex-col">
             <p class="block font-sans text-sm antialiased font-normal text-start leading-normal text-white">

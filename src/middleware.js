@@ -1,6 +1,6 @@
 import { withAuth } from "next-auth/middleware";
 
-export default async function middleware() {
+export default async function middleware(req, event) {
   const authMiddleware = withAuth({
     pages: {
       signIn: `/login`,
