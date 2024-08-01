@@ -1,25 +1,16 @@
 "use client"
 
 import React from 'react'
-import Image from "next/image";
+
 import DashBoardInfo from "../../../(components)/DashBoardInfo";
 
 import { useEffect } from 'react'
-import { usePathname } from 'next/navigation';
+
 import { useState } from 'react';
-
-import { TbLogout2 } from "react-icons/tb";
 import { GiPrayer } from "react-icons/gi";
-import Ofrenda from '../../../public/OFRENDA.svg'
-import Diezmo from '../../../public/DIEZMO.svg'
-import Donar from '../../../public/DONAR.svg'
-import Primicia from '../../../public/PRIMICIA.svg'
 import DashBoardInfoContenido from '@/app/(components)/DashBoardInfoContenido';
-import { FaUserCog } from "react-icons/fa";
 import { TbChartInfographic } from "react-icons/tb";
-import { TbMathMin } from "react-icons/tb";
 import { FaBalanceScale } from "react-icons/fa";
-
 import { BiMoneyWithdraw } from "react-icons/bi";
 import { HiCog } from 'react-icons/hi2';
 import { signOut, useSession } from 'next-auth/react';
