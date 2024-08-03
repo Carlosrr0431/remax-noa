@@ -4,7 +4,7 @@ import Imagen1 from '../public/t-avt-1.png'
 import Imagen2 from '../public/t-avt-2.png'
 import Imagen3 from '../public/t-avt-3.png'
 
-const testimonialData = [
+const testimonialData2 = [
 
     {
         image: Imagen1,
@@ -30,32 +30,32 @@ const testimonialData = [
 
 ];
 
-const testimonialData2 = [
+const testimonialData = [
 
     {
         image: Imagen1,
-        name: "Silvia Loaza",
+        name: "Nick Jona",
         position: "Apostol",
         message:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
     },
     {
         image: Imagen2,
-        name: "Silvia Loaza",
+        name: "Jhon Bolovir",
         position: "Apostol",
         message:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
     },
     {
         image: Imagen3,
-        name: "Claudio Loaza",
+        name: "Seven king",
         position: "Apostol",
         message:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
     },
     {
         image: Imagen2,
-        name: "Silvia Loaza",
+        name: "Nicolas Kage",
         position: "Apostol",
         message:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
