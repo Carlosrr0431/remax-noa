@@ -13,7 +13,7 @@ const override = {
 
 const fileTypes = ["JPG", "PNG", "SVG", "JPEG"];
 
-export const ModalBanner = ({ setShowModal3, operacion, idEvento }) => {
+export const ModalBanner = ({ setShowModal2, operacion, idEvento }) => {
 
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false)
@@ -35,7 +35,7 @@ export const ModalBanner = ({ setShowModal3, operacion, idEvento }) => {
                 <div className={`flex justify-center mb-4 ${loading ? "hidden" : "block"}`}>
                     <h1 className="w-full text-center text-black items-center text-grey-darkest ">{operacion} </h1>
 
-                    <div className="" onClick={() => setShowModal3(false)}>
+                    <div className="" onClick={() => setShowModal2(false)}>
                         <HiOutlineXMark className="text-black w-[30px] h-[30px] cursor-pointer hover:scale-110" color="black" />
                     </div>
                 </div>
@@ -58,7 +58,7 @@ export const ModalBanner = ({ setShowModal3, operacion, idEvento }) => {
                     }
 
 
-                    return (setShowModal3(false), setLoading(false))
+                    return (setShowModal2(false), setLoading(false))
 
                 }} >
 

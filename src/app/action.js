@@ -190,6 +190,7 @@ export async function crearBanner(formData) {
   );
 
   const imagen = formData.get("imagen");
+  const imagen2 = formData.get("imagenCelular");
 
   console.log("Entro crear evento");
 
@@ -199,28 +200,51 @@ export async function crearBanner(formData) {
     });
   }
 
-  const bytes = await imagen.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-
-  const result = await new Promise((resolve, reject) => {
-    cloudinary.uploader
-      .upload_stream({}, (err, result) => {
-        if (err) reject(err);
-
-        resolve(result);
-      })
-      .end(buffer);
-  });
-
   if (imagen.size != 0) {
-    const result2 = await supabase
+    const bytes = await imagen.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    const result = await new Promise((resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream({}, (err, result) => {
+          if (err) reject(err);
+
+          resolve(result);
+        })
+        .end(buffer);
+    });
+
+    const result3 = await supabase
       .from("banners")
       .insert({
         imagenUrl: result.secure_url,
       })
       .single();
 
-    console.log(JSON.stringify(result2));
+    console.log(JSON.stringify(result3));
+  }
+
+  if (imagen2 != 0) {
+    const bytes2 = await imagen2.arrayBuffer();
+    const buffer2 = Buffer.from(bytes2);
+
+    const result2 = await new Promise((resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream({}, (err, result) => {
+          if (err) reject(err);
+
+          resolve(result);
+        })
+        .end(buffer2);
+    });
+
+    const result3 = await supabase
+      .from("banners")
+      .insert({
+        imagenUrlCelular: result2.secure_url,
+      })
+      .single();
+    console.log(JSON.stringify(result3));
   }
 
   return { message: "Success" };

@@ -11,7 +11,7 @@ import { MdOutlineDashboard } from 'react-icons/md';
 import { BsPersonArmsUp } from "react-icons/bs";
 import { BsPersonStanding } from "react-icons/bs";
 import { CardCursos } from './CardCursos';
-
+import { LuDumbbell } from "react-icons/lu";
 import { GiHieroglyphLegs } from "react-icons/gi";
 import { supabaseClient } from '@/supabase/client';
 import { useSession } from 'next-auth/react';
@@ -26,10 +26,11 @@ const SideNav = () => {
     const { data: session } = useSession()
 
     const menus = [
+        { name: "Todos", link: "/", icon: LuDumbbell },
         { name: "Piernas", link: "/", icon: GiHieroglyphLegs },
         { name: "Brazos", link: "/", icon: BsPersonArmsUp },
-        { name: "Espalda", link: "/", icon: BsPersonArmsUp },
-        { name: "Todos", link: "/", icon: BsPersonStanding },
+        { name: "Espalda", link: "/", icon: BsPersonStanding },
+
 
 
         // { name: "analytics", link: "/", icon: MdOutlineDashboard, margin: true },
@@ -105,14 +106,14 @@ const SideNav = () => {
                     } duration-500 text-gray-100 px-4 fixed z-40  shadow-md shadow-black/50 `}
             >
 
-                <div className={`py-3 flex fixed    ${!open ? 'justify-end' : 'justify-between space-x-8 '}`}>
+                <div className={`py-3 flex fixed    ${!open ? 'justify-end' : 'justify-between space-x-8 '} whitespace-pre duration-500`}>
 
                     <h2 className={`text-white whitespace-pre duration-500  overflow-hidden transition-all text-[15px] ${!open ? 'hidden' : 'block'}`} style={{
-                        transitionDelay: `${100}00ms`,
+                        transitionDelay: `${1000}00ms`,
                     }}>Elija una categoria</h2>
                     <HiMenuAlt3
                         size={26}
-                        className="cursor-pointer overflow-hidden whitespace-pre"
+                        className="cursor-pointer overflow-hidden  duration-700"
                         onClick={() => setOpen(!open)}
                     />
                 </div>
@@ -123,7 +124,7 @@ const SideNav = () => {
                                 onClick={() => handleClick(menu?.name)}
                                 key={i}
                                 className={` ${menu?.margin && "mt-5"
-                                    } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md ${open ? 'max-w-[200px] ' : 'max-w-[110px] '}`}
+                                    } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md ${open ? 'max-w-[200px] ' : 'max-w-[70px]'}`}
                             >
                                 <div>{React.createElement(menu?.icon, { size: "20" })}</div>
                                 <h2
@@ -138,7 +139,7 @@ const SideNav = () => {
                                 </h2>
                                 <h2
                                     className={`${open && "hidden"
-                                        } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit z-20  `}
+                                        } absolute  bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit z-20  `}
                                 >
                                     {menu?.name}
 
@@ -149,7 +150,7 @@ const SideNav = () => {
                                 onClick={() => handleClick(menu?.name)}
                                 key={i}
                                 className={` ${menu?.margin && "mt-5"
-                                    } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md ${open ? 'max-w-[200px] ' : 'max-w-[110px] '}`}
+                                    } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md ${open ? 'max-w-[200px] ' : 'max-w-[70px] '}`}
                             >
                                 <div>{React.createElement(menu?.icon, { size: "20" })}</div>
                                 <h2
@@ -164,7 +165,7 @@ const SideNav = () => {
                                 </h2>
                                 <h2
                                     className={`${open && "hidden"
-                                        } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit z-20  `}
+                                        } absolute  bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit z-20  `}
                                 >
                                     {menu?.name}
 
