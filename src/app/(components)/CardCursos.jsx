@@ -56,7 +56,7 @@ export const CardCursos = ({ elem, adquirido }) => {
 
 
 
-            <div className='flex mt-5 h-[150px] flex-col'><h5 class="text-xl  px-5  tracking-tight text-slate-900 text-wrap">{elem.titulo}</h5>
+            <div className='flex mt-5 h-[150px] flex-col'><h5 class="text-[15px] montserrat font-semibold md:text-xl  px-5  tracking-tight text-slate-900 text-wrap">{elem.titulo}</h5>
 
                 <p class="text-[15px]  px-5  tracking-tight text-slate-900 text-wrap">{elem.descripcion}</p></div>
 

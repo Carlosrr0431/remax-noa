@@ -428,9 +428,19 @@ export async function adminUser(datos, tipo, id, precio) {
     .select("*")
     .or(`dni.eq.${dni},email.eq.${email}`);
 
-  const data = result2.data;
+  const result1 = await supabase
+    .from("usuarios")
+    .select("*")
+    .match({ dni: dni });
 
-  console.log("datos: " + data);
+  const result3 = await supabase
+    .from("usuarios")
+    .select("*")
+    .match({ email: email });
+
+  const dataDni = result1.data;
+  const data = result2.data;
+  const dataEmail = result3.data;
 
   if (tipo == "Agregar") {
     if (
@@ -464,7 +474,6 @@ export async function adminUser(datos, tipo, id, precio) {
       console.log(result2);
     } else if (data.length >= 1) {
       message = "Los datos ya existen.";
-      console.log("ENTRO DNI");
       error[1] = "DNI o Email ya existente";
     }
   } else if (tipo == "Modificar") {
@@ -499,8 +508,7 @@ export async function adminUser(datos, tipo, id, precio) {
             dni: dni,
             edad: edad,
             tipoPlan: plan,
-            dias: 0,
-            fechaIngreso: null,
+            dias: data[0].dias,
           })
           .eq("id", id);
       } else {
@@ -521,12 +529,21 @@ export async function adminUser(datos, tipo, id, precio) {
       message = "Se actualizo correctamente";
     } else {
       message = "No se actualizo correctamente";
-      error[1] = "DNI ya existente";
+
+      if (dataDni.length >= 1 && dataDni[0].id != id)
+        error[1] = "DNI ya existente";
+
+      if (dataDni.length >= 1 && dataEmail[0].id != id)
+        error[1] = "Email ya existente";
     }
   } else if (data.length >= 1) {
     message = "Los datos ya existen.";
-    console.log("ENTRO DNI");
-    error[1] = "DNI ya existente";
+
+    if (dataDni.length >= 1 && dataDni[0].id != id)
+      error[1] = "DNI ya existente";
+
+    if (dataDni.length >= 1 && dataEmail[0].id != id)
+      error[1] = "Email ya existente";
   } else if (tipo == "Eliminar") {
     const result2 = await supabase.from("usuarios").delete().eq("id", id);
   }

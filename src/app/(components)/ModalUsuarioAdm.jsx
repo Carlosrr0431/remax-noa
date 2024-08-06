@@ -24,6 +24,10 @@ export const ModalUsuarioAdm = ({ setShowModal, info }) => {
     })
 
     const handleError = (errores) => {
+
+        console.log("ERROR: " + errores[1]);
+        
+
         setErrorDni(errores[1
         ])
 

@@ -15,9 +15,10 @@ const WhatsApp = () => {
         // fixed right-0 bottom-0 z-50 mb-8 mr-8
         <div className={`${pathname == '/dashboard' || pathname == '/dashboard/administrador' || pathname == '/dashboard/user' || pathname == '/login' ? 'hidden' : 'block'} `}>
             <Link
+             
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://wa.me/+543878256529?text=Escribenos para poder orar por ti"
+                href="https://wa.me/+543876364202?text=Quiero mas info..."
                 className=""
             >
                 <Image

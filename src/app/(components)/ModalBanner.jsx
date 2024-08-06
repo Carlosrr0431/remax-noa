@@ -44,17 +44,13 @@ export const ModalBanner = ({ setShowModal2, operacion, idEvento }) => {
 
 
                         await actualizarBanner(formData, idEvento)
-                        toast.success('El pedido de oración fue enviado con exito!!!', {
-                            description: "Estaremos orando por ti y tu familia."
-                        })
+                        toast.success('El banner fue actualizado!!!')
 
                     }
                     else if (operacion == "Crear Banner") {
 
                         await crearBanner(formData)
-                        toast.success('El pedido de oración fue enviado con exito!!!', {
-                            description: "Estaremos orando por ti y tu familia."
-                        })
+                        toast.success('El banner fue creado!!!')
                     }
 
 

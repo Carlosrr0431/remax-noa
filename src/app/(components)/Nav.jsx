@@ -65,9 +65,6 @@ const Nav = () => {
                   <div className="text-[13px] text-end  font-regular w-auto text-nowrap leading-none   uppercase">
                     {link.name}
                   </div>
-                  {/* <div className="border-solid border-l-white border-l-8 border-y-transparent border-y-[10px]border-r-0 absolute -right-2">
-                    {" "}
-                  </div> */}
                 </div>
               </div>
 

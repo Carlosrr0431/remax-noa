@@ -175,18 +175,27 @@ const Accordion = ({ usuario }) => {
 
 
 
-            {usuario?.dias >= diasPlan ? (<div
+            {usuario?.dias >= diasPlan && usuario?.tipoPlan !== "" ? (<div
               class="relative justify-center flex items-center px-2 mt-2 font-sans text-[15px] font-semibold   rounded-md select-none whitespace-nowrap  text-[#FF0000]">
               <span class="items-center">Inactivo  </span><TbPointFilled className="mt-1 w-4 h-4 items-center text-[#FF0000]" color="#FF0000" />
 
-            </div>) : (
+            </div>) : usuario?.tipoPlan !== "" && usuario?.dias < diasPlan ? (
               <div
                 class="relative grid items-center px-2  font-sans text-[15px] font-semibold text-green-800  rounded-md select-none whitespace-nowrap ">
                 <span className="flex gap-x-1 justify-center items-center ">Activo  <FaCircleCheck className="w-4 h-4 text-green-800" /></span>
                 <span className="flex gap-x-1 justify-center text-gray-800 items-center ">Plan {usuario?.tipoPlan}  </span>
 
               </div>
-            )}
+            ) : (
+              <div
+                class="relative grid items-center px-2  font-sans text-[15px] font-semibold text-gray-800  rounded-md select-none whitespace-nowrap ">
+                <span className="flex gap-x-1 justify-center items-center ">Sin Plan  <FaCircleCheck className="w-4 h-4 text-gray-800" /></span>
+
+
+              </div>
+            )
+
+            }
           </div>
 
         </div>
@@ -213,6 +222,7 @@ const Accordion = ({ usuario }) => {
             <button onClick={() => {
               setShowModal(true),
                 setInfo({
+                  tipo: "Modificar",
                   nombre: String(usuario?.nombre),
                   email: String(usuario?.email),
                   role: String(usuario?.role),
@@ -221,6 +231,7 @@ const Accordion = ({ usuario }) => {
                   id: usuario?.id,
                   edad: usuario?.edad,
                   telefono: usuario?.telefono,
+                  dni: usuario?.dni
                 })
             }} className="flex text-black justify-center items-center gap-x-2 w-[150px] mt-4 border-[1px] border-white p-2 rounded-md"> <BiSolidUserDetail className="h-5 w-5" color="#000000" /> Mis datos </button>
 
@@ -229,7 +240,7 @@ const Accordion = ({ usuario }) => {
 
           {
             <div>
-              {usuario?.tipoPlan !== null ?
+              {usuario?.tipoPlan !== "" ?
                 <button onClick={() => {
                   return setShowModal2(true)
                 }} className={`text-white bg-emerald-800  font-semibold p-2 mt-1 z-50 hover:bg-white hover:text-black ${renovarHandle() ? 'block' : 'hidden'}  rounded-md`}>  Renovar Plan </button> : <button onClick={() => {
@@ -246,8 +257,8 @@ const Accordion = ({ usuario }) => {
             {/* usuario?.ingresoApp ==  "Sin solicitar" */}
             {/* usuario?.ingresoApp == "Solicitar ingreso" */}
 
-            {usuario?.dias < diasPlan && usuario?.tipoPlan !== null && usuario?.ingresoApp == "Sin solicitar" && establecerFecha(usuario?.fechaIngreso) >= 1 ? (<button onClick={() => actualizarNotificacion("Solicitar ingreso", usuario?.id)} type="button" className="button  flex md:justify-center md:items-center md:w-[250px] md:mt-4 w-[150px] relative left-[60px] md:left-0 ">Solicitar Ingreso</button>) :
-              usuario?.dias < diasPlan && usuario?.tipoPlan !== null && usuario?.ingresoApp == "Solicitar Ingreso" ? (<button type="button" className="button relative flex md:justify-center md:items-center md:w-[250px] md:mt-4 w-[150px]  left-[60px] md:left-0 ">Esperando solicitud...</button>) : usuario?.dias < diasPlan && usuario?.tipoPlan !== null && usuario?.ingresoApp == "Ingreso permitido" ? (<div class="btn-conteiner flex md:justify-center md:items-center md:w-[500px] md:mt-4 w-[150px] relative left-[60px] md:left-0  ">
+            {usuario?.dias < diasPlan && usuario?.tipoPlan !== "" && usuario?.ingresoApp == "Sin solicitar" && establecerFecha(usuario?.fechaIngreso) >= 1 ? (<button onClick={() => actualizarNotificacion("Solicitar ingreso", usuario?.id)} type="button" className="button  flex md:justify-center md:items-center md:w-[250px] md:mt-4 w-[150px] relative left-[60px] md:left-0 ">Solicitar Ingreso</button>) :
+              usuario?.dias < diasPlan && usuario?.tipoPlan !== "" && usuario?.ingresoApp == "Solicitar Ingreso" ? (<button type="button" className="button relative flex md:justify-center md:items-center md:w-[250px] md:mt-4 w-[150px]  left-[60px] md:left-0 ">Esperando solicitud...</button>) : usuario?.dias < diasPlan && usuario?.tipoPlan !== "" && usuario?.ingresoApp == "Ingreso permitido" ? (<div class="btn-conteiner flex md:justify-center md:items-center md:w-[500px] md:mt-4 w-[150px] relative left-[60px] md:left-0  ">
                 <a class="btn-content" href="#">
                   <span class="btn-title text-center text-[14px] items-center">Ingresá al GYM</span>
                   <span class="icon-arrow">

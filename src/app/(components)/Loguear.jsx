@@ -1,26 +1,28 @@
 "use client"
 
 import { signIn, useSession, signOut } from 'next-auth/react'
+import Link from 'next/link'
 import { useEffect } from 'react'
+import { MdAccountCircle } from "react-icons/md";
 
 
 function SigIn() {
 
   const { data: session } = useSession()
 
-  useEffect(() => {
+  // useEffect(() => {
 
 
-    if (session?.user?.name != undefined) {
+  //   if (session?.user?.name != undefined) {
 
-      setTimeout(async () => {
-        await signOut({
-          callbackUrl: "/",
-        })
-      }, 600000000);
+  //     setTimeout(async () => {
+  //       await signOut({
+  //         callbackUrl: "/",
+  //       })
+  //     }, 600000000);
 
-    }
-  }, [session])
+  //   }
+  // }, [session])
 
 
   return (
@@ -28,21 +30,16 @@ function SigIn() {
 
       {session?.user ? (
 
-        <div className=' cursor-pointer' onClick={async () => {
-          await signOut({
-            callbackUrl: "/",
-          })
-        }}>
+        <div className=' cursor-pointer' >
 
 
-          <button
-
-            type='button'
-            className=" text-lg hover:bg-blue-500 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent bg-fondo1 z-50 "
+          <Link
+            href="/user"
+            className=" text-lg hover:bg-blue-500 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent bg-fondo1 z-50 flex justify-center items-center gap-x-2 w-full h-full "
           >
-            <h2>SALIR</h2>
-
-          </button>
+            <h2 className='border-r-[1px] border-black/40 px-2 h-full'>Entrar </h2>
+            <MdAccountCircle />
+          </Link>
 
 
 
@@ -51,20 +48,16 @@ function SigIn() {
       ) : (
 
 
-        <div className='  cursor-pointer' onClick={() => {
-          signIn('google', {
-            callbackUrl: "/user"
-          })
-        }}>
+        <div className='  cursor-pointer' >
           {/* text-black  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-fondo1 hover:border-transparent rounded */}
-          <button
+          <Link
 
-            type='button'
-            className="bg-fondo1  text-lg hover:bg-black/90 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent z-50"
+            href="/user"
+            className="bg-fondo1  text-lg hover:bg-black/90 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent z-50 flex w-full h-full"
           >
             <h2>UNIRSE</h2>
 
-          </button>
+          </Link>
 
         </div>
 

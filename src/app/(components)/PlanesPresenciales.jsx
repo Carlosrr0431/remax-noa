@@ -165,7 +165,7 @@ export const PlanesPresenciales = () => {
 
                     </div>
 
-                    <div class="w-full mb-[100px] sm:mb-0 p-8 space-y-8 text-center bg-white rounded-lg">
+                    <div class="w-full mb-[180px]  sm:mb-0 p-8 space-y-8 text-center bg-white rounded-lg">
                         <p class="font-medium text-gray-800 uppercase text-center">Combinado</p>
 
                         <p class="mt-2 sm:mt-4">

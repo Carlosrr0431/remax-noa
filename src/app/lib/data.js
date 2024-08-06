@@ -119,6 +119,13 @@ export const EliminarEvento = async (id, tipo) => {
         .from("usuarios")
         .delete()
         .eq("id", id);
+    } else if (tipo == "Eliminar Usuario Admin") {
+      const result2 = await supabase
+        .from("usuarios")
+        .update({
+          role: "member",
+        })
+        .eq("id", id);
     }
 
     return { mensaje: "Se elimino correctamente" };

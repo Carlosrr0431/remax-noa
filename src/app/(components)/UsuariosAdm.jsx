@@ -7,6 +7,7 @@ import { getUsuarios } from '../lib/data'
 import { ModalUsuario } from './ModalUsuario'
 import { TiUserDelete } from "react-icons/ti";
 import { userAdmin } from '../action'
+import { ModalConfirmar } from './ModalConfirmar'
 
 
 
@@ -15,6 +16,9 @@ export const UsuariosAdm = () => {
     const [usuarios, setUsuarios] = useState()
     const [showModal, setShowModal] = useState(false)
     const [info, setInfo] = useState({})
+    const [tipo, setTipo] = useState()
+    const [showModal3, setShowModal3] = useState(false)
+    const [idEvento, setIdEvento] = useState()
 
     useEffect(() => {
 
@@ -44,7 +48,7 @@ export const UsuariosAdm = () => {
 
                 } else if (payload.eventType == 'UPDATE') {
 
-                    if ( payload.new.role == 'user admin' || payload.new.role == 'admin' ) {
+                    if (payload.new.role == 'user admin' || payload.new.role == 'admin') {
                         return setUsuarios((antContenido) => antContenido.map((elem) => {
                             if (elem.id == payload.new.id) {
                                 elem = payload.new
@@ -209,8 +213,11 @@ export const UsuariosAdm = () => {
                                     <td class="p-4 border-b border-blue-gray-50">
                                         <button
 
-                                            onClick={async () =>
-                                                await userAdmin(null, "Eliminar", user.id)
+                                            onClick={() => {
+                                                setShowModal3(true)
+                                                setTipo("Eliminar Usuario Admin")
+                                                setIdEvento(user.id)
+                                            }
                                             }
 
 
@@ -235,6 +242,10 @@ export const UsuariosAdm = () => {
 
             {
                 showModal && <ModalUsuario info={info} setShowModal={setShowModal} />
+            }
+
+            {
+                showModal3 && <ModalConfirmar tipo={tipo} setShowModal3={setShowModal3} idEvento={idEvento} />
             }
         </div>
     )

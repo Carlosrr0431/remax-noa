@@ -44,7 +44,7 @@ const ModalPlan = ({ setShowModal2 }) => {
                 {
                     title: planes,
                     quantity: 1,
-                    price: 10,
+                    price: 1,
                     name: session?.user.name,
                     description: session?.user.email
                     // price: monto,
@@ -107,7 +107,7 @@ const ModalPlan = ({ setShowModal2 }) => {
                         </button>
                         <button
                             onClick={() => handlePlan("Super Intenso")}
-                            className={`${planes == 'Intenso' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
+                            className={`${planes == 'Super Intenso' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
                             type="button">
                             Super Intenso
                         </button>

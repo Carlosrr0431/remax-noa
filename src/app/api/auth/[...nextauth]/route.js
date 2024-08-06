@@ -18,7 +18,7 @@ const handler = NextAuth({
           response_type: "code",
         },
       },
- 
+
       profile(profile) {
         return {
           id: profile.sub,
@@ -49,6 +49,8 @@ const handler = NextAuth({
           nombre: user.name,
           email: user.email,
           imagenUrl: user.image,
+          role: "member",
+          fechaIngreso: new Date().toLocaleDateString()
         });
 
         console.log("se creo el usuario: " + result2);
@@ -60,7 +62,10 @@ const handler = NextAuth({
     async jwt({ token, user }) {
       let { data: usuarios, error } = await supabaseClient
         .from("usuarios")
-        .select("*").order('id', { ascending: true });
+        .select("*")
+        .order("id", { ascending: true });
+
+      console.log("USUARIO EMAIL: " + user?.email);
 
       if (user?.email != undefined) {
         if (
@@ -75,7 +80,7 @@ const handler = NextAuth({
             .find((e) => e.email == user?.email)
         )
           token.role = "user admin";
-        else token.role == "member";
+        else token.role = "member";
       }
 
       return token;

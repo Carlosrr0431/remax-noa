@@ -109,27 +109,29 @@ const User = () => {
       <div className='md:flex md:flex-row justify-center mx-auto items-center w-full gap-x-8 mt-10 h-auto flex-col flex'>
 
         <div className='w-[320px]  md:w-[350px] min-h-[50px]  mt-10 '>
-          <div class="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
+          <div className="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
             <div className='flex justify-start gap-x-4'>
-              <Image class="w-[25%] h-[25%] " src={pesas} alt="" width={0} height={0} />
-              <h2 class="font-semibold mb-2 mt-4 w-full text-white/70 text-[20px]">Dias cumplidos</h2>
+              <Image className="w-[25%] h-[25%] " src={pesas} alt="" width={0} height={0} />
+              <h2 className="font-semibold mb-2 mt-4 w-full text-white/70 text-[20px]">Dias cumplidos</h2>
             </div>
 
-            <h2 class="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.dias}</h2>
+            <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.dias || 0}</h2>
             {
-              usuario?.dias >= cantDias ? (
-                <h2 class="font-semibold mb-2 mx-auto text-center  w-full text-red-400 text-[15px]">Necesitas renovar tu plan</h2>
+              usuario?.dias >= cantDias && usuario?.tipoPlan !== "" ? (
+                <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-red-400 text-[15px]">Necesitas renovar tu plan</h2>
+              ) : usuario?.dias < cantDias && usuario?.tipoPlan !== "" ? (
+                <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-green-400 text-[15px]">¡Estas al dia!</h2>
               ) : (
-                <h2 class="font-semibold mb-2 mx-auto text-center  w-full text-green-400 text-[15px]">¡Estas al dia!</h2>
+                <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-gray-400 text-[15px]">No cuentas con un plan...</h2>
               )
             }
-            <div class="progress mt-10 w-full">
+            <div className="progress mt-10 w-full">
 
-              <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div ref={divRef} class={`bg-blue-600 h-2.5 rounded-full `}  ></div>
+              <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div ref={divRef} className={`bg-blue-600 h-2.5 rounded-full `}  ></div>
               </div>
             </div>
-            <div class="flex flex-row justify-between mt-2 font-semibold text-xl text-gray-600">
+            <div className="flex flex-row justify-between mt-2 font-semibold text-xl text-gray-600">
               <span>0</span>
 
               <span>{cantDias}</span>
@@ -139,22 +141,32 @@ const User = () => {
         </div>
 
         <div className='w-[320px]  md:w-[350px] min-h-[50px]  mt-10 '>
-          <div class="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
+          <div className="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
             <div className='flex  gap-x-4'>
-              <Image class="w-20 " src={tasas} alt="" width={0} height={0} />
-              <h2 class="font-semibold mb-2 mt-4 mx-auto w-full text-white/70 text-[20px]">Puntos obtenidos</h2>
+              <Image className="w-20 " src={tasas} alt="" width={0} height={0} />
+              <h2 className="font-semibold mb-2 mt-4 mx-auto w-full text-white/70 text-[20px]">Puntos obtenidos</h2>
             </div>
 
-            <h2 class="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.puntos}</h2>
-            <h2 class="font-semibold mb-2 mx-auto text-center  w-full text-green-400 text-[15px]">¡Sigue así!</h2>
+            <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.puntos || 0}</h2>
+            {/* <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-green-400 text-[15px]">¡Sigue así!</h2> */}
+
+            {
+              usuario?.dias >= cantDias && usuario?.tipoPlan !== "" ? (
+                <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-green-400 text-[15px]">Necesitas renovar tu plan</h2>
+              ) : usuario?.dias < cantDias && usuario?.tipoPlan !== "" ? (
+                <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-green-400 text-[15px]">¡Sigue así!</h2>
+              ) : (
+                <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-gray-400 text-[15px]">No cuentas con un plan...</h2>
+              )
+            }
 
 
-            <div class="progress mt-10 w-full">
-              <div class="bg-gray-300 h-2 rounded-md "></div>
-              <div ref={divRef2} class="bg-green-500  h-2 rounded-md -mt-2"></div>
+            <div className="progress mt-10 w-full">
+              <div className="bg-gray-300 h-2 rounded-md "></div>
+              <div ref={divRef2} className="bg-green-500  h-2 rounded-md -mt-2"></div>
             </div>
 
-            <div class="flex flex-row justify-between mt-2 font-semibold text-xl text-gray-600">
+            <div className="flex flex-row justify-between mt-2 font-semibold text-xl text-gray-600">
               <span>0pts</span>
 
               <span>2500pts</span>
@@ -164,15 +176,15 @@ const User = () => {
         </div>
 
         {/* <div className='w-[350px] max-h-[50px] mt-10 '>
-          <div class="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
-            <Image class="w-20 " src={tasas} alt="" width={0} height={0} />
+          <div className="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
+            <Image className="w-20 " src={tasas} alt="" width={0} height={0} />
 
-            <h2 class="font-semibold mb-2 mt-11 text-white text-3xl">Puntos: 1500</h2>
-            <div class="progress mt-10 w-full">
-              <div class="bg-gray-300 h-2 rounded-md "></div>
-              <div class="bg-green-500 w-3/4 h-2 rounded-md -mt-2"></div>
+            <h2 className="font-semibold mb-2 mt-11 text-white text-3xl">Puntos: 1500</h2>
+            <div className="progress mt-10 w-full">
+              <div className="bg-gray-300 h-2 rounded-md "></div>
+              <div className="bg-green-500 w-3/4 h-2 rounded-md -mt-2"></div>
             </div>
-            <div class="flex flex-row justify-between mt-2 font-semibold text-xl text-gray-600">
+            <div className="flex flex-row justify-between mt-2 font-semibold text-xl text-gray-600">
               <span>0pts</span>
 
               <span>2500pts</span>

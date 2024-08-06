@@ -96,7 +96,7 @@ const Home = () => {
         <TestimonialSlider />
       </section>
 
-      <footer class="w-full bg-gray-900 h-[600px] sm:h-[320px]">
+      <footer class="w-full bg-gray-900 h-[700px] sm:h-[320px]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
           <div class="py-16 flex justify-between items-center flex-col gap-8 lg:flex-row">
