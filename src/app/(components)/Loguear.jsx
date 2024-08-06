@@ -30,12 +30,12 @@ function SigIn() {
 
       {session?.user ? (
 
-        <div className=' cursor-pointer' >
+        <div className=' cursor-pointer md:relative md:left-[20px] w-full right-[15px] relative' >
 
 
           <Link
             href="/user"
-            className=" text-lg hover:bg-blue-500 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent bg-fondo1 z-50 flex justify-center items-center gap-x-2 w-full h-full "
+            className=" text-lg hover:bg-blue-500 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent bg-fondo1 z-50 flex justify-center items-center gap-x-2 w-full  h-full "
           >
             <h2 className='border-r-[1px] border-black/40 px-2 h-full'>Entrar </h2>
             <MdAccountCircle />
@@ -48,7 +48,7 @@ function SigIn() {
       ) : (
 
 
-        <div className='  cursor-pointer' >
+        <div className='  cursor-pointer md:relative md:left-0 w-full left-[15px] relative' >
           {/* text-black  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-fondo1 hover:border-transparent rounded */}
           <Link
 

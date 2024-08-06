@@ -10,8 +10,8 @@ import { Suspense } from "react";
 
 
 export const metadata = {
-  title: "Iglesia CRS",
-  description: "Iglesia Cristiana del Dios VIVO",
+  title: "Biggest GYM",
+  description: "Gimnasio enfocado en aumentar tu potencial",
   manifest: "/manifest.json",
 };
 

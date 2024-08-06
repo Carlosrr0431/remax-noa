@@ -8,7 +8,7 @@ const Cursos = () => {
     return (
         <div className='bg-slate-800 w-full h-full relative overflow-y-scroll '>
 
-            <div className='fixed left-[88%] top-[20px] z-20'>
+            <div className='fixed left-[55%] md:left-[88%] top-[20px] z-20'>
                 <Loguear />
             </div>
             <Sidebar />

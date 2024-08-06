@@ -176,7 +176,7 @@ const Accordion = ({ usuario }) => {
 
 
             {usuario?.dias >= diasPlan && usuario?.tipoPlan !== "" ? (<div
-              class="relative justify-center flex items-center px-2 mt-2 font-sans text-[15px] font-semibold   rounded-md select-none whitespace-nowrap  text-[#FF0000]">
+              class="relative justify-center flex items-center px-2 mt-[10px] font-sans  text-[15px] font-semibold   rounded-md select-none whitespace-nowrap  text-[#FF0000]">
               <span class="items-center">Inactivo  </span><TbPointFilled className="mt-1 w-4 h-4 items-center text-[#FF0000]" color="#FF0000" />
 
             </div>) : usuario?.tipoPlan !== "" && usuario?.dias < diasPlan ? (
@@ -188,7 +188,7 @@ const Accordion = ({ usuario }) => {
               </div>
             ) : (
               <div
-                class="relative grid items-center px-2  font-sans text-[15px] font-semibold text-gray-800  rounded-md select-none whitespace-nowrap ">
+                class="relative grid items-center px-2  font-sans text-[15px] font-semibold text-gray-800  rounded-md select-none whitespace-nowrap mt-[10px] ">
                 <span className="flex gap-x-1 justify-center items-center ">Sin Plan  <FaCircleCheck className="w-4 h-4 text-gray-800" /></span>
 
 

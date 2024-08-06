@@ -115,7 +115,7 @@ const User = () => {
               <h2 className="font-semibold mb-2 mt-4 w-full text-white/70 text-[20px]">Dias cumplidos</h2>
             </div>
 
-            <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.dias || 0}</h2>
+            <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.dias}</h2>
             {
               usuario?.dias >= cantDias && usuario?.tipoPlan !== "" ? (
                 <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-red-400 text-[15px]">Necesitas renovar tu plan</h2>
@@ -147,7 +147,7 @@ const User = () => {
               <h2 className="font-semibold mb-2 mt-4 mx-auto w-full text-white/70 text-[20px]">Puntos obtenidos</h2>
             </div>
 
-            <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.puntos || 0}</h2>
+            <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-yellow-500 text-[30px]">{usuario?.puntos}</h2>
             {/* <h2 className="font-semibold mb-2 mx-auto text-center  w-full text-green-400 text-[15px]">¡Sigue así!</h2> */}
 
             {
@@ -197,7 +197,7 @@ const User = () => {
 
       </div>
 
-      <div className='w-full h-[40%] mt-10 '>
+      <div className='w-full h-[40%] mt-10 mb-[100px] '>
         <SwipperUser />
       </div>
 

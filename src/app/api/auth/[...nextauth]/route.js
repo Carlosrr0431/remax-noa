@@ -50,7 +50,9 @@ const handler = NextAuth({
           email: user.email,
           imagenUrl: user.image,
           role: "member",
-          fechaIngreso: new Date().toLocaleDateString()
+          fechaIngreso: new Date().toLocaleDateString(),
+          puntos: 0,
+          dias: 0
         });
 
         console.log("se creo el usuario: " + result2);

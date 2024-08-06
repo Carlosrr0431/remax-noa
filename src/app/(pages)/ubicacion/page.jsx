@@ -8,9 +8,9 @@ const Ubicacion = () => {
     <div className="  md:flex justify-center items-center h-full  flex-wrap  md:w-full bg-gradient-to-r from-[#00E5B9] from-5% to-[#005B82] to-80% overflow-y-scroll md:gap-x-10 montserrat">
 
       <div
-        className='hidden md:block'
+        className='hidden md:block md:mb-[100px]'
       >
-        <h2 className='montserrat text-[30px] leading-tight md:text-[40px] font-normal md:leading-[1.3] mb-4'>¿COMO LLEGAR?</h2>
+        <h2 className='montserrat items-center text-[30px] leading-tight md:text-[40px] font-normal md:leading-[1.3] mb-7'>¿COMO LLEGAR?</h2>
         <p className='montserrat text-start text-wrap w-[400px] text-[20px] leading-tight md:text-[25px]  text-white md:leading-[1.3] mb-4'><span className="texto-borde"> Haz clic</span> en cómo llegar para ver la ruta según tu medio de transporte.</p>
       </div>
 
