@@ -176,7 +176,7 @@ const SideNav = () => {
                 </div>
             </div>
 
-            <div className={`relative duration-500 transition-all  md:flex  md:flex-wrap md:gap-x-8 left-[100px]  mb-20 md:left-[300px] -mx-6 mt-[20px]  max-w-[80%] h-full ${open ? '' : 'md:-ml-[120px] md:gap-x-12 '} mt-[50px] md:mt-0`}>
+            <div className={`relative duration-500 transition-all  md:flex  md:flex-wrap md:gap-x-8 left-[100px]  mb-20 md:left-[300px] -mx-6 mt-[20px]  max-w-[80%] h-full ${open ? '' : 'md:-ml-[120px] md:gap-x-12 '} mt-[50px] `}>
 
 
                 {

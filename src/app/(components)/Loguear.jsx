@@ -28,7 +28,7 @@ function SigIn() {
   return (
     <div className='relative left-12 z-50'>
 
-      {session?.user ? (
+      {session?.user != undefined ? (
 
         <div className=' cursor-pointer md:relative md:left-[20px] w-full right-[15px] relative' >
 
