@@ -11,6 +11,7 @@ import EventoEspecial from "./models/EventoEspecial";
 import User from "./models/User";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
+import moment from "moment";
 
 cloudinary.config({
   cloud_name: "dlxwkq6bm",
@@ -553,12 +554,6 @@ export async function adminUser(datos, tipo, id, precio) {
 
 export async function registrarIngreso(dias, id) {
   console.log("Ingreso a registrar!!");
-  const horaHoy = new Date();
-  let hora;
-
-  if (horaHoy.getMinutes() >= 0 && horaHoy.getMinutes() <= 9) {
-    hora = horaHoy.getHours() + ":0" + horaHoy.getMinutes();
-  } else hora = horaHoy.getHours() + ":" + horaHoy.getMinutes();
 
   const cookieStore = cookies();
 
@@ -574,8 +569,8 @@ export async function registrarIngreso(dias, id) {
     .from("usuarios")
     .update({
       dias: dias,
-      horaIngreso: hora,
-      fechaIngreso: new Date().toLocaleDateString(),
+      horaIngreso: moment().format("HH:mm"),
+      fechaIngreso: moment().format("DD/MM/YYYY"),
     })
     .eq("id", id);
 
