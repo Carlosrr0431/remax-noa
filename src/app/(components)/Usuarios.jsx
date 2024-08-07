@@ -7,7 +7,7 @@ import { actualizarNotificacion, registrarIngreso } from '../action';
 import { ModalRenovar } from './ModalRenovar';
 import { AiOutlineClose } from 'react-icons/ai';
 import { toast } from 'sonner';
-import * as moment from 'moment';
+import moment from 'moment-timezone';
 import { TiUserDelete } from 'react-icons/ti';
 import { useSession } from 'next-auth/react';
 import { ModalConfirmar } from './ModalConfirmar';
@@ -132,6 +132,9 @@ export const Usuarios = () => {
     }
 
     const establecerFecha = (fecha1) => {
+
+        console.log("FECHA" + moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"));
+        
         if (fecha1 != null) {
 
             var fecha2 = moment(new Date().toLocaleDateString().split('/').reverse().join('/'));

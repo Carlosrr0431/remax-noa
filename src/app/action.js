@@ -11,7 +11,7 @@ import EventoEspecial from "./models/EventoEspecial";
 import User from "./models/User";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
-import moment from "moment";
+import moment from "moment-timezone";
 
 cloudinary.config({
   cloud_name: "dlxwkq6bm",
@@ -569,8 +569,9 @@ export async function registrarIngreso(dias, id) {
     .from("usuarios")
     .update({
       dias: dias,
-      horaIngreso: moment().format("HH:mm"),
-      fechaIngreso: moment().format("DD/MM/YYYY"),
+
+      horaIngreso: moment().tz("America/Argentina/Salta").format("HH:mm"),
+      fechaIngreso: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
     })
     .eq("id", id);
 
