@@ -612,14 +612,6 @@ export async function actualizarPlan(plan, id) {
 }
 
 export async function actualizarNotificacion(tipo, id, dias) {
-  console.log("Ingreso a actualizar notificacion!!");
-  const horaHoy = new Date();
-  let hora;
-
-  if (horaHoy.getMinutes() >= 0 && horaHoy.getMinutes() <= 9) {
-    hora = horaHoy.getHours() + ":0" + horaHoy.getMinutes();
-  } else hora = horaHoy.getHours() + ":" + horaHoy.getMinutes();
-
   const cookieStore = cookies();
 
   const supabase = createServerClient(
@@ -645,8 +637,10 @@ export async function actualizarNotificacion(tipo, id, dias) {
       .update({
         ingresoApp: "Ingreso permitido",
         dias: dias,
-        horaIngreso: hora,
-        fechaIngreso: new Date().toLocaleDateString(),
+        horaIngreso: moment().tz("America/Argentina/Salta").format("HH:mm"),
+        fechaIngreso: moment()
+          .tz("America/Argentina/Salta")
+          .format("DD/MM/yyyy"),
       })
       .eq("id", id);
 
