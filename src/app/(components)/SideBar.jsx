@@ -32,7 +32,6 @@ const SideNav = () => {
         { name: "Espalda", link: "/", icon: BsPersonStanding },
 
 
-
         // { name: "analytics", link: "/", icon: MdOutlineDashboard, margin: true },
         // { name: "File Manager", link: "/", icon: MdOutlineDashboard },
         // { name: "Cart", link: "/", icon: MdOutlineDashboard },

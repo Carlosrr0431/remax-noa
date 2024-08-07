@@ -28,7 +28,7 @@ export const CardCursos = ({ elem, adquirido }) => {
                 {
                     title: plan,
                     quantity: 1,
-                    price: 1,
+                    price: 10,
                     name: id,
                     description: session?.user.email
                     // price: monto,

@@ -143,15 +143,39 @@ export const Usuarios = () => {
         setUsuarios(data.data)
     }
 
-    const establecerFecha = (fecha1) => {
+    const establecerFecha = (fecha1, nombre) => {
+
+        const first = fecha1.split('/').reverse().join('-');
+        const fechaHoy = new Date().toLocaleDateString().split('/').reverse().join('-');
+
+
+        // Crea dos objetos Date con las fechas para comparar
+        const x = new Date(first);
+        const y = new Date(fechaHoy);
+
+        //Obtiene la diferencia en milisegundos
+        const diff = x.getTime() - y.getTime();
+
+        // segundos = milisegundos / 1000
+        // minutos = segundos / 60
+        // horas = minutos / 60
+        // Días = horas / 24
+
+        //Convierte la diferencia a días
+        const days = diff / (1000 * 60 * 60 * 24);
+
+        //Imprime el resultado
+
 
         if (fecha1 != null) {
 
-            var fecha2 = moment(new Date().toLocaleDateString().split('/').reverse().join('/'));
+            return Math.abs(days)
+        } else {
 
-            return Math.abs(fecha2.diff(fecha1.split('/').reverse().join('/'), 'days'))
-        } else
-            return 1
+
+            return 1;
+
+        }
     }
 
     let inputHandler = (e) => {
@@ -503,7 +527,7 @@ export const Usuarios = () => {
                                             <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-white/80 border-[1px] rounded-md border-gray-800 p-2 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                                                 Registrar Ingreso
                                             </span>
-                                        </button>) : (elem.tipoPlan == 'Basico' && elem.dias < 8 && establecerFecha(elem.fechaIngreso) == 0) ? ((<button
+                                        </button>) : (elem.tipoPlan == 'Basico' && elem.dias < 8 && establecerFecha(elem.fechaIngreso, elem.nombre) == 0) ? ((<button
                                             onClick={() =>
                                                 toast.custom((t) => (
                                                     <div className='bg-white p-4 rounded-md text-black relative'>

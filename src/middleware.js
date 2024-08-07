@@ -31,7 +31,6 @@ export default async function middleware(req, event) {
             token?.role == "admin" ||
             token?.role == "user admin")
         ) {
-          console.log("Entro a USER");
           return true;
         } else return false;
       },
