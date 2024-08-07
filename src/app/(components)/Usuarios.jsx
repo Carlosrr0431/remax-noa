@@ -145,8 +145,8 @@ export const Usuarios = () => {
 
     const establecerFecha = (fecha1, nombre) => {
 
-        const first = fecha1.split('/').reverse().join('-');
-        const fechaHoy = new Date().toLocaleDateString().split('/').reverse().join('-');
+        const first = fecha1;
+        const fechaHoy = new Date().toLocaleDateString();
 
 
         // Crea dos objetos Date con las fechas para comparar
@@ -164,11 +164,16 @@ export const Usuarios = () => {
         //Convierte la diferencia a días
         const days = diff / (1000 * 60 * 60 * 24);
 
-        //Imprime el resultado
+        //Imprime el resultad
 
+        // setInterval(() => {
+        //     alert(days)
+        // }, 10000);
 
         if (fecha1 != null) {
 
+            console.log("fecha:" + Math.abs(days));
+            
             return Math.abs(days)
         } else {
 
@@ -525,7 +530,7 @@ export const Usuarios = () => {
                                             class="relative  min-h-[50px]  min-w-[60px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900"
                                             type="button">
                                             <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-white/80 border-[1px] rounded-md border-gray-800 p-2 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                                                Registrar Ingreso
+                                                Registrar Ingreso 
                                             </span>
                                         </button>) : (elem.tipoPlan == 'Basico' && elem.dias < 8 && establecerFecha(elem.fechaIngreso, elem.nombre) == 0) ? ((<button
                                             onClick={() =>
@@ -1413,7 +1418,7 @@ export const Usuarios = () => {
                                             className="relative  min-h-[50px]  min-w-[60px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-gray-900"
                                             type="button">
                                             <span className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 text-white/80 border-[1px] rounded-md border-gray-800 p-2 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
-                                                Registrar Ingreso
+                                                Registrar Ingreso {establecerFecha(elem.fechaIngreso)}
                                             </span>
                                         </button>) : (elem.tipoPlan == 'Basico' && elem.dias < 8 && establecerFecha(elem.fechaIngreso) == 0) ? ((<button
                                             onClick={() =>
