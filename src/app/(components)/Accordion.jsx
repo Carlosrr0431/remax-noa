@@ -13,8 +13,6 @@ import ModalPlan from "./ModalPlan";
 import { actualizarNotificacion } from "../action";
 import moment from "moment";
 import Image from "next/image";
-import { redirect } from "react-router-dom";
-import Link from "next/link";
 
 
 const Accordion = ({ usuario }) => {
