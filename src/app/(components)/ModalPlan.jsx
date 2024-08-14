@@ -21,7 +21,7 @@ const ModalPlan = ({ setShowModal2 }) => {
 
     const { data: session } = useSession()
     const router = useRouter()
-    const [planes, setPlanes] = useState("Basico")
+    const [planes, setPlanes] = useState("Plan x2")
     const [listaPrecios, setListaPrecios] = useState();
 
 
@@ -38,6 +38,9 @@ const ModalPlan = ({ setShowModal2 }) => {
 
         try {
 
+
+            console.log("usuario en payment: " + session?.user.email );
+            
             const response = await axios.post(
                 "/api/create_preference",
 
@@ -94,44 +97,44 @@ const ModalPlan = ({ setShowModal2 }) => {
                 <div className="grid  w-full place-items-center overflow-x-scroll rounded-lg  lg:overflow-visible">
                     <div className="flex divide-x divide-gray-800 row">
                         <button
-                            onClick={() => handlePlan("Basico")}
-                            className={`${planes == 'Basico' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
+                            onClick={() => handlePlan("Plan x2")}
+                            className={`${planes == 'Plan x2' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
                             type="button">
-                            Basico
+                            Plan x2
                         </button>
                         <button
-                            onClick={() => handlePlan("Semi Intenso")}
-                            className={`${planes == 'Semi Intenso' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
+                            onClick={() => handlePlan("Plan x3")}
+                            className={`${planes == 'Plan x3' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
                             type="button">
-                            Semi Intenso
+                            Plan x3
                         </button>
                         <button
-                            onClick={() => handlePlan("Super Intenso")}
-                            className={`${planes == 'Super Intenso' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
+                            onClick={() => handlePlan("Plan Libre")}
+                            className={`${planes == 'Plan Libre' ? 'bg-gray-400' : ''} align-middle  font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6    shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none rounded-r-none border-r-0 text-black `}
                             type="button">
-                            Super Intenso
+                            Plan Libre
                         </button>
                     </div>
                 </div>
                 <p className="mt-2 sm:mt-4">
                     {
                         listaPrecios != undefined &&
-                        <strong className="text-3xl font-bold text-gray-900 sm:text-4xl"> {planes == 'Basico' ? listaPrecios[0].precio : planes == "Semi Intenso" ? listaPrecios[1]?.precio : planes == 'Super Intenso' ? listaPrecios[2]?.precio : ''} </strong>
+                        <strong className="text-3xl font-bold text-gray-900 sm:text-4xl"> {planes == 'Plan x2' ? listaPrecios[0].precio : planes == "Plan x3" ? listaPrecios[1]?.precio : planes == 'Plan Libre' ? listaPrecios[2]?.precio : ''} </strong>
                     }
 
                     <span className="text-sm font-medium text-gray-700">/mes</span>
                 </p>
 
-                <p className="font-medium text-gray-500 dark:text-gray-300">{planes == 'Basico' ? "Incluye 2 clases por semana" : planes == "Semi Intenso" ? 'Incluye 3 clases por semana' : planes == 'Super Intenso' ? 'Incluye todos los dias' : ''}</p>
+                <p className="font-medium text-gray-500 dark:text-gray-300">{planes == 'Plan x2' ? "Incluye 2 clases por semana" : planes == "Plan x3" ? 'Incluye 3 clases por semana' : planes == 'Plan Libre' ? 'Incluye todos los dias' : ''}</p>
 
                 <button onClick={() => {
                     let precio;
 
-                    if (planes == "Basico") {
+                    if (planes == "Plan x2") {
                         precio = Number((listaPrecios[0].precio.replace(/\s+/g, '')).replace(/[$.]/g, ''))
-                    } else if (planes == "Semi Intenso") {
+                    } else if (planes == "Plan x3") {
                         precio = Number((listaPrecios[1].precio.replace(/\s+/g, '')).replace(/[$.]/g, ''))
-                    } else if (planes == "Super Intenso") {
+                    } else if (planes == "Plan Libre") {
                         precio = Number((listaPrecios[2].precio.replace(/\s+/g, '')).replace(/[$.]/g, ''))
                     }
 

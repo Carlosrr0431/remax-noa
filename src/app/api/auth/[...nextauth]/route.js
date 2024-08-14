@@ -1,6 +1,6 @@
 import { supabaseClient } from "@/supabase/client";
 import NextAuth from "next-auth";
-
+import moment from "moment-timezone";
 import GoogleProvider from "next-auth/providers/google";
 
 const handler = NextAuth({
@@ -50,7 +50,6 @@ const handler = NextAuth({
           email: user.email,
           imagenUrl: user.image,
           role: "member",
-          fechaIngreso: new Date().toLocaleDateString(),
           puntos: 0,
           dias: 0
         });

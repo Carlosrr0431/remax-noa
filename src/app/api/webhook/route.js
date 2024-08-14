@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import moment from "moment-timezone";
 
 let fuente = "";
 
@@ -75,6 +76,8 @@ export async function POST(request) {
     // console.log(dataTransform.items[0].title);
 
     // const descripcionUser = dataTransform.items[0].description;
+    console.log("ENTRO CON: " + dataInfo?.items[0]);
+    
 
     if (
       dataInfo?.items[0] != undefined &&
@@ -88,7 +91,9 @@ export async function POST(request) {
             monto: currencyFormatter(data.transaction_amount),
             nombre: dataInfo?.items[0].category_id,
             tipoPlan: dataInfo?.items[0].title,
-            fechaPago: new Date().toLocaleDateString(),
+            fechaPago:  moment()
+            .tz("America/Argentina/Salta")
+            .format("DD/MM/yyyy"),
           })
           .single();
 
@@ -99,7 +104,9 @@ export async function POST(request) {
             fechaIngreso: null,
             tipoPlan: dataInfo?.items[0].title,
             puntos: data2 != undefined && data2?.data?.puntos + 500,
-            fechaPago: new Date().toLocaleDateString(),
+            fechaPago:  moment()
+            .tz("America/Argentina/Salta")
+            .format("DD/MM/yyyy"),
           })
           .eq("email", dataInfo?.items[0].description);
 

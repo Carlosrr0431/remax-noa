@@ -55,16 +55,16 @@ const User = () => {
   }, [session?.user.email])
 
   useEffect(() => {
-    if (usuario?.tipoPlan == "Basico") {
+    if (usuario?.tipoPlan == "Plan x2") {
       setDiasPlan((usuario?.dias / 8) * 100)
 
       divRef.current.style.width = `${diasPlan}%`
-    } else if (usuario?.tipoPlan == "Semi Intenso") {
+    } else if (usuario?.tipoPlan == "Plan x3") {
       setDiasPlan((usuario?.dias / 12) * 100)
 
       divRef.current.style.width = `${diasPlan}%`
-    } else if (usuario?.tipoPlan == "Super Intenso") {
-      setDiasPlan((usuario?.dias / 16) * 100)
+    } else if (usuario?.tipoPlan == "Plan Libre") {
+      setDiasPlan((usuario?.dias / 31) * 100)
 
       divRef.current.style.width = `${diasPlan}%`
     } else
@@ -82,12 +82,12 @@ const User = () => {
 
   useEffect(() => {
 
-    if (usuario?.tipoPlan == "Basico") {
+    if (usuario?.tipoPlan == "Plan x2") {
       setCantDias(8)
-    } else if (usuario?.tipoPlan == "Semi Intenso") {
+    } else if (usuario?.tipoPlan == "Plan x3") {
       setCantDias(12)
-    } else if (usuario?.tipoPlan == "Super Intenso") {
-      setCantDias(16)
+    } else if (usuario?.tipoPlan == "Plan Libre") {
+      setCantDias(31)
     }
 
   }, [usuario?.tipoPlan])

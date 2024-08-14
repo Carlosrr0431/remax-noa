@@ -11,7 +11,6 @@ export const ModalUsuarioAdm = ({ setShowModal, info }) => {
     const [errorDni, setErrorDni] = useState("")
     const [errorTelefono, setErrorTelefono] = useState("")
     const [listaPrecios, setListaPrecios] = useState();
-    const [precio, setPrecio] = useState("")
 
     const [datos, setDatos] = useState({
         name: info.nombre,
@@ -19,14 +18,15 @@ export const ModalUsuarioAdm = ({ setShowModal, info }) => {
         plan: info.plan,
         edad: info.edad,
         telefono: info.telefono,
-        dni: info.dni
+        dni: info.dni,
+        dias: info.dias
 
     })
 
     const handleError = (errores) => {
 
         console.log("ERROR: " + errores[1]);
-        
+
 
         setErrorDni(errores[1
         ])
@@ -41,10 +41,37 @@ export const ModalUsuarioAdm = ({ setShowModal, info }) => {
         // console.log(event.target.name)
         // console.log(event.target.value)
 
-        setDatos({
-            ...datos,
-            [event.target.name]: event.target.value
-        })
+        if (event.target.name == "dias") {
+            if (event.target.value <= 8 && datos.plan == "Plan x2") {
+                setDatos({
+                    ...datos,
+                    [event.target.name]: event.target.value
+                })
+            }
+            else if (datos.plan == "Plan x3" && event.target.name == "dias") {
+                if (event.target.value <= 12) {
+                    setDatos({
+                        ...datos,
+                        [event.target.name]: event.target.value
+                    })
+                }
+            } else if (datos.plan == "Plan Libre" && event.target.name == "dias") {
+                if (event.target.value <= 31) {
+                    setDatos({
+                        ...datos,
+                        [event.target.name]: event.target.value
+                    })
+                }
+            }
+        } else {
+            setDatos({
+                ...datos,
+                [event.target.name]: event.target.value
+            })
+        }
+
+
+
     }
 
     useEffect(() => {
@@ -83,11 +110,11 @@ export const ModalUsuarioAdm = ({ setShowModal, info }) => {
                     let result;
                     let precio;
 
-                    if (datos.plan == "Basico") {
+                    if (datos.plan == "Plan x2") {
                         precio = (listaPrecios[0].precio)
-                    } else if (datos.plan == "Semi Intenso") {
+                    } else if (datos.plan == "Plan x3") {
                         precio = (listaPrecios[1].precio)
-                    } else if (datos.plan == "Super Intenso") {
+                    } else if (datos.plan == "Plan Libre") {
                         precio = (listaPrecios[2].precio)
                     }
 
@@ -135,10 +162,10 @@ export const ModalUsuarioAdm = ({ setShowModal, info }) => {
                         <div className="flex flex-col mb-4 relative">
                             <label for="plan" class="absolute left-0 ml-1 -translate-y-3 bg-black rounded-md  px-2 text-sm duration-100 ease-linear peer-placeholder-shown:translate-y-0 text-white peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:ml-1 peer-focus:-translate-y-3 peer-focus:px-1 peer-focus:text-sm">Plan</label>
                             <select onChange={handleInputChange} required id="plan" name='plan' class="bg-gray-50 border ease-linear  border-gray-300 text-black text-grey-darkest  text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block py-3 px-3  w-full dark:bg-gray-700 focus:outline-none dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option selected>{datos.plan} | {datos.plan == 'Basico' ? listaPrecios != undefined && listaPrecios[0]?.precio : datos.plan == 'Semi Intenso' ? listaPrecios != undefined && listaPrecios[1]?.precio : datos.plan == 'Super Intenso' ? listaPrecios != undefined && listaPrecios[2]?.precio : null} </option>
-                                <option value="Basico" className={`font-bold ${datos.plan == 'Basico' ? 'hidden' : 'block'}`}>Basico |  {listaPrecios != undefined && listaPrecios[0]?.precio}</option>
-                                <option value="Semi Intenso" className={`font-bold ${datos.plan == 'Semi Intenso' ? 'hidden' : 'block'}`}>Semi Intenso | {listaPrecios != undefined && listaPrecios[1]?.precio}</option>
-                                <option value="Super Intenso" className={`font-bold ${datos.plan == 'Super Intenso' ? 'hidden' : 'block'}`}>Super Intenso | {listaPrecios != undefined && listaPrecios[2]?.precio}</option>
+                                <option selected>{datos.plan} | {datos.plan == 'Plan x2' ? listaPrecios != undefined && listaPrecios[0]?.precio : datos.plan == 'Plan x3' ? listaPrecios != undefined && listaPrecios[1]?.precio : datos.plan == 'Plan Libre' ? listaPrecios != undefined && listaPrecios[2]?.precio : null} </option>
+                                <option value="Plan x2" className={`font-bold ${datos.plan == 'Plan x2' ? 'hidden' : 'block'}`}>Plan x2 |  {listaPrecios != undefined && listaPrecios[0]?.precio}</option>
+                                <option value="Plan x3" className={`font-bold ${datos.plan == 'Plan x3' ? 'hidden' : 'block'}`}>Plan x3 | {listaPrecios != undefined && listaPrecios[1]?.precio}</option>
+                                <option value="Plan Libre" className={`font-bold ${datos.plan == 'Plan Libre' ? 'hidden' : 'block'}`}>Plan Libre | {listaPrecios != undefined && listaPrecios[2]?.precio}</option>
 
 
                             </select>
@@ -159,6 +186,12 @@ export const ModalUsuarioAdm = ({ setShowModal, info }) => {
 
                             <label for="telefono" class="absolute left-0 ml-1 -translate-y-3 bg-black rounded-md  px-2 text-sm duration-100 ease-linear peer-placeholder-shown:translate-y-0 text-white peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:ml-1 peer-focus:-translate-y-3 peer-focus:px-1 peer-focus:text-sm">Telefono</label>
                             <input value={datos.telefono} required className="border text-lg py-2 px-3 text-grey-darkest md:ml-0  focus:outline-none focus:bg-white/90 text-black focus:text-black rounded-[5px]" placeholder='Número de telefono' type="tel" name="telefono" id="telefono" onChange={handleInputChange} />
+                        </div>
+
+                        <div className="flex flex-col mb-4 relative">
+
+                            <label for="dias" class="absolute left-0 ml-1 -translate-y-3 bg-black rounded-md  px-2 text-sm duration-100 ease-linear peer-placeholder-shown:translate-y-0 text-white peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:ml-1 peer-focus:-translate-y-3 peer-focus:px-1 peer-focus:text-sm">Dia | opcional</label>
+                            <input value={datos.dias} className="border text-lg py-2 px-3 text-grey-darkest md:ml-0  focus:outline-none focus:bg-white/90 text-black focus:text-black rounded-[5px]" placeholder='Dias del plan' type="number" name="dias" id="dias" onChange={handleInputChange} />
                         </div>
 
 

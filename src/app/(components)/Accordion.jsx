@@ -13,6 +13,8 @@ import ModalPlan from "./ModalPlan";
 import { actualizarNotificacion } from "../action";
 import moment from "moment";
 import Image from "next/image";
+import { redirect } from "react-router-dom";
+import Link from "next/link";
 
 
 const Accordion = ({ usuario }) => {
@@ -24,6 +26,7 @@ const Accordion = ({ usuario }) => {
   const [showModal2, setShowModal2] = useState(false)
   const [listaPrecios, setListaPrecios] = useState();
   const [info, setInfo] = useState({})
+
 
 
 
@@ -93,29 +96,32 @@ const Accordion = ({ usuario }) => {
 
 
   const renovarHandle = () => {
-    if (usuario?.tipoPlan == "Basico") {
+    if (usuario?.tipoPlan == "Plan x2") {
       if (usuario?.dias >= 8)
         return true
       else return false
-    } else if (usuario?.tipoPlan == "Semi Intenso") {
+    } else if (usuario?.tipoPlan == "Plan x3") {
       if (usuario?.dias >= 12)
         return true
       else return false
-    } else if (usuario?.tipoPlan == "Super Intenso") {
-      if (usuario?.dias >= 16)
+    } else if (usuario?.tipoPlan == "Plan Libre") {
+      if (usuario?.dias >= 31)
         return true
       else return false
+
+
+
     }
   }
 
 
   useEffect(() => {
 
-    if (usuario?.tipoPlan == "Basico") {
+    if (usuario?.tipoPlan == "Plan x2") {
       setDiasPlan(8)
     } else if (usuario?.tipoPlan == "Semi Intenso") {
       setDiasPlan(12)
-    } else if (usuario?.tipoPlan == "Super Intenso") {
+    } else if (usuario?.tipoPlan == "Plan Libre") {
       setDiasPlan(16)
     }
 
@@ -238,12 +244,27 @@ const Accordion = ({ usuario }) => {
 
           </div>
 
+
+
+
           {
             <div>
               {usuario?.tipoPlan !== "" ?
                 <button onClick={() => {
                   return setShowModal2(true)
-                }} className={`text-white bg-emerald-800  font-semibold p-2 mt-1 z-50 hover:bg-white hover:text-black ${renovarHandle() ? 'block' : 'hidden'}  rounded-md`}>  Renovar Plan </button> : <button onClick={() => {
+
+                }} className={`text-white bg-emerald-800  font-semibold p-2 mt-1 z-50 hover:bg-white hover:text-black ${renovarHandle() ? 'block' : 'hidden'}  rounded-md`}>  Renovar Plan </button>
+
+                // <Link
+
+                //   rel="noopener noreferrer"
+                //   target="_blank"
+                //   href="https://wa.me/+543876364202?text=Necesito renovar mi plan..."
+                //   className={`text-white bg-emerald-800  font-semibold p-2 mt-1 z-50 hover:bg-white hover:text-black ${renovarHandle() ? 'block' : 'hidden'}  rounded-md`}
+                // >
+                //   Renovar Plan
+                // </Link>
+                : <button onClick={() => {
                   return setShowModal2(true)
 
                 }} className={`text-white bg-emerald-800  font-semibold p-2 mt-1 z-50 hover:bg-white hover:text-black  rounded-md`}>  Adquirir Plan </button>}

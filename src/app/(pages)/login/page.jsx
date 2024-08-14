@@ -24,7 +24,7 @@ const Login = () => {
                 await signOut({
                     callbackUrl: "/",
                 })
-            }, 60000000);
+            }, 600000);
 
         }
     }, [session])

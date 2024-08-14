@@ -6,10 +6,6 @@ import { cookies } from "next/headers";
 import { connectToDB } from "./lib/db";
 import { v2 as cloudinary } from "cloudinary";
 import Oracion from "./models/Oracion";
-import Evento from "./models/Evento";
-import EventoEspecial from "./models/EventoEspecial";
-import User from "./models/User";
-import { revalidatePath, revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import moment from "moment-timezone";
 
@@ -419,6 +415,7 @@ export async function adminUser(datos, tipo, id, precio) {
   const dni = datos?.dni;
   const plan = datos?.plan;
   const edad = datos?.edad;
+  const dias = datos?.dias;
 
   const err = checkTelef(telefono);
   error[0] = err;
@@ -456,10 +453,11 @@ export async function adminUser(datos, tipo, id, precio) {
         dni: dni,
         edad: edad,
         tipoPlan: plan,
-        fechaPago: new Date().toLocaleDateString(),
+        fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
         dias: 0,
         puntos: 0,
         role: "member",
+        dias: dias
       });
 
       const result3 = await supabase.from("pagos").insert({
@@ -467,7 +465,7 @@ export async function adminUser(datos, tipo, id, precio) {
         email: email,
         dni: dni,
         tipoPlan: plan,
-        fechaPago: new Date().toLocaleDateString(),
+        fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
         monto: precio,
       });
 
@@ -489,6 +487,7 @@ export async function adminUser(datos, tipo, id, precio) {
           dni: dni,
           edad: edad,
           tipoPlan: plan,
+          dias: dias
         })
         .eq("id", id);
 
@@ -510,6 +509,9 @@ export async function adminUser(datos, tipo, id, precio) {
             edad: edad,
             tipoPlan: plan,
             dias: data[0].dias,
+            fechaPago: moment()
+              .tz("America/Argentina/Salta")
+              .format("DD/MM/yyyy"),
           })
           .eq("id", id);
       } else {
@@ -523,6 +525,7 @@ export async function adminUser(datos, tipo, id, precio) {
             dni: dni,
             edad: edad,
             tipoPlan: plan,
+            dias: dias
           })
           .eq("id", id);
       }
@@ -580,13 +583,7 @@ export async function registrarIngreso(dias, id) {
   return { message: "Success" };
 }
 
-export async function actualizarPlan(plan, id) {
-  const hoy = Date.now();
-  const fechaHoy = new Date(hoy);
-  const formatoFecha = fechaHoy.toLocaleDateString();
-
-  console.log(formatoFecha);
-
+export async function actualizarPlan(datos, precio, id) {
   const cookieStore = cookies();
 
   const supabase = createServerClient(
@@ -597,12 +594,28 @@ export async function actualizarPlan(plan, id) {
     }
   );
 
+
+  console.log(datos.name, datos.email, datos.plan, datos.modoPago, precio);
+  
+
+
+  const result3 = await supabase.from("pagos").insert({
+    nombre: datos.name,
+    email: datos.email,
+    tipoPlan: datos.plan,
+    fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
+    monto: precio,
+    modoPago: datos.modoPago,
+  });
+
+  console.log(result3);
+
   const result2 = await supabase
     .from("usuarios")
     .update({
-      tipoPlan: plan,
+      tipoPlan: datos.plan,
       dias: 0,
-      fechaPago: formatoFecha,
+      fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
     })
     .eq("id", id);
 
