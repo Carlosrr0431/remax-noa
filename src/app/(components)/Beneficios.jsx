@@ -59,7 +59,7 @@ export const Beneficios = ({ scrollNum }) => {
             <div className='w-full h-full  '  >
                 <h1 className='bg-rgb(178, 190, 181) text-center flex justify-center text-[20px] -mb-[120px]   md:mt-10 md:mb-4 md:text-[30px] mx-auto'>NUESTROS BENEFICIOS</h1>
 
-                <section className="py-20 bg-background mt-14">
+                <section className="bg-background mt-[110px] md:mt-0  md:py-0 w-full h-full">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
                             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
@@ -94,7 +94,7 @@ export const Beneficios = ({ scrollNum }) => {
                             </div>
                             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                                 <Image src={SalaAcondicionamiento} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
-                                <h3 className="text-xl font-semibold text-gray-600">Sala de acondicionamiento</h3>
+                                <h3 className="text-xl font-semibold text-gray-600">Programas personalizados</h3>
 
                             </div>
                             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
