@@ -1,23 +1,21 @@
 import { supabaseClient } from "@/supabase/client";
 import NextAuth from "next-auth";
-import moment from "moment-timezone";
 import GoogleProvider from "next-auth/providers/google";
 
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      clientId:
-        "36313790560-dnkqfkvlerrb2ujdpaqsn8q7avs72p5k.apps.googleusercontent.com",
-      clientSecret: "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",
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
 
       // authorization solo es para modo de desarrollo
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
+      // authorization: {
+      //   params: {
+      //     prompt: "consent",
+      //     access_type: "offline",
+      //     response_type: "code",
+      //   },
+      // },
 
       profile(profile) {
         return {
@@ -51,7 +49,7 @@ const handler = NextAuth({
           imagenUrl: user.image,
           role: "member",
           puntos: 0,
-          dias: 0
+          dias: 0,
         });
 
         console.log("se creo el usuario: " + result2);

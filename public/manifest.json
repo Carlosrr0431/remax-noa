@@ -4,9 +4,9 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "Next Example",
-    "short_name": "nextex",
-    "description": "nextjs example description",
+    "name": "Biggest GYM",
+    "short_name": "BG",
+    "description": "Gimnacio",
     "icons": [
         {
             "src": "/icon-192x192.png",
