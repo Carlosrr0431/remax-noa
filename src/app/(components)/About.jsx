@@ -7,8 +7,8 @@ export default function About() {
                 <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center opacity-20" />
                 <div className="relative z-10 container mx-auto flex h-full flex-col items-center justify-center px-4 text-center text-primary-foreground">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">Conocenos...</h1>
-                    <p className="mt-3 max-w-3xl text-lg sm:mt-5 sm:text-xl">
-                        Nuestro sueño fue abrir un gimnasio que no solo fuera un lugar para entrenar, sino también un espacio donde las personas se sintieran motivadas y apoyadas en su camino hacia la salud y el bienestar.
+                    <p className="mt-3 max-w-4xl text-lg sm:mt-5 sm:text-xl">
+                        Pasaron muchos años y nos dimos cuenta que nuestro patrón común era cuidar a la gente, que la gente se mueva y se mueva sanamente. Mejorar la calidad de vida de las personas, si es un deportista elevar su rendimiento evitando lesiones, al sujeto Fitness ayudarlo a que alcance su mejor versión, y si venían con alguna lesión ayudarlos en el proceso de curado. A lo largo de los años hemos ido perfeccionando la metodología y hacemos lo que nos gusta, ayudar y cuidar a la gente. Proceso + metodología + trabajo en equipo = BIGGEST GYM.
                     </p>
                 </div>
             </section>
@@ -17,23 +17,23 @@ export default function About() {
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                         <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                             <RocketIcon className="h-12 w-12 text-primary" />
-                            <h3 className="text-xl font-semibold text-gray-600">Enfoque en la salud y el bienestar</h3>
+                            <h3 className="text-xl font-semibold text-gray-600">Acondicionamiento físico</h3>
                             <p className="text-muted-foreground text-gray-600">
-                                Promovemos un estilo de vida saludable, fomentando la actividad física regular y la alimentación balanceada.
+                                Tu mejor versión según tu objetivo pero alcanzarlo sanamente con ejecuciones adecuadas y progresiones ideales. Alcanza tu objetivo con nuestra metodología.
                             </p>
                         </div>
                         <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                             <UsersIcon className="h-12 w-12 text-primary" />
-                            <h3 className="text-xl font-semibold text-gray-600"> Enfoque en facilitar un ambiente positivo</h3>
+                            <h3 className="text-xl font-semibold text-gray-600"> Entrenamiento Online</h3>
                             <p className="text-muted-foreground text-gray-600">
-                                Promovemos la conexión entre los miembros mediante talleres sobre técnicas y el bienestar.
+                                Puedes entrenar con nosotros y nuestra metodología donde sea que estés, con seguimiento y asesoramiento permanente como continuo.
                             </p>
                         </div>
                         <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                             <BoltIcon className="h-12 w-12 text-primary" />
-                            <h3 className="text-xl font-semibold text-gray-600">Enfoque en facilitar la eficiencia</h3>
+                            <h3 className="text-xl font-semibold text-gray-600">Lesiones</h3>
                             <p className="text-muted-foreground text-gray-600">
-                                Promovemos una serie de programas  para darte los mejores resultados adecuados para vos.
+                                Con kinesiologo y profes especializados podrás recuperarte de tu lesión de la manera más eficiente y sana para no volver a lesionarte. Recuperación funcional a través del movimiento.
                             </p>
                         </div>
                     </div>

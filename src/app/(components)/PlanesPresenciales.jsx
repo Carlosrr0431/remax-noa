@@ -197,7 +197,7 @@ export const PlanesPresenciales = () => {
                             className={``}
                         >
                             <button class="w-full px-4 py-2 mt-10 tracking-wide text-black capitalize transition-colors duration-300 transform bg-fondo1 rounded-md hover:bg-black hover:text-yellow-500 focus:outline-none focus:bg-black focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                                Mas info...
+                            Consultar por Bases y Condiciones
                             </button>
                         </Link>
 {/* 

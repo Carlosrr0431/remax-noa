@@ -1,9 +1,5 @@
 import React, { use, useRef, useState } from 'react'
 
-import { FaWifi } from "react-icons/fa";
-import { FaGlassWaterDroplet } from "react-icons/fa6";
-import { FaShower } from "react-icons/fa6";
-import { CgGym } from "react-icons/cg";
 import Wifi from '../public/wifi-svgrepo-com (1).svg'
 import Ducha from '../public/shower-svgrepo-com.svg'
 import Vestuario from '../public/lockers-svgrepo-com.svg'
@@ -11,14 +7,12 @@ import Dispenser from '../public/water-dispenser-svgrepo-com.svg'
 import Patologia from '../public/health-analyst-medical-diagnosis-body-wellness-check-up-svgrepo-com.svg'
 import Prevencion from '../public/protect-svgrepo-com (1).svg'
 import SalaAcondicionamiento from '../public/gym-svgrepo-com.svg'
-import Recuperacion from '../public/exercise-gym-svgrepo-com.svg'
 import AltoRendimiento from '../public/cyclist-svgrepo-com.svg'
 import Image from 'next/image';
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useEffect } from 'react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BoltIcon, RocketIcon, UsersIcon } from 'lucide-react';
+import Kinesiologia from '../public/3289563-man-walking-peer-person-person-walking-walking_107110.svg'
 
 export const Beneficios = ({ scrollNum }) => {
 
@@ -100,6 +94,13 @@ export const Beneficios = ({ scrollNum }) => {
                             <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
                                 <Image src={AltoRendimiento} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px]' />
                                 <h3 className="text-xl font-semibold text-gray-600">Recuperación deportiva</h3>
+
+                            </div>
+
+                            <div className="flex flex-col items-center justify-center gap-4 rounded-lg bg-card p-6 text-center shadow-lg transition-all duration-300 hover:scale-105">
+                                <Image src={Kinesiologia} width={0} height={0} alt='' className='w-[48px] h-[48px] sm:w-[50px] sm:h-[50px] text-white fill-white' color='#ffffff' />
+
+                                <h3 className="text-xl font-semibold text-gray-600">Kinesiología</h3>
 
                             </div>
                         </div>
