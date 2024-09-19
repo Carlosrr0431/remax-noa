@@ -1,6 +1,8 @@
 "use client"
 
 import About from '@/app/(components)/About'
+import { EntrevistaPage } from '@/app/(components)/EntrevistaPage'
+import { ProgramarEntrevista2 } from '@/app/(components)/ProgramarEntrevista2'
 import { useAppContext } from '@/app/(context)/AppWrapper'
 import React, { useRef, useState } from 'react'
 
@@ -19,8 +21,8 @@ const AboutPage = () => {
     }
 
     return (
-        <div className='w-ful h-full overflow-y-auto' onScroll={handleScroll} ref={container}>
-            <About />
+        <div className='w-ful h-full overflow-y-auto ' onScroll={handleScroll} ref={container}>
+            <EntrevistaPage/>
         </div>
     )
 }

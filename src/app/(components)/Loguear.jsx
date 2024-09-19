@@ -32,12 +32,11 @@ function SigIn() {
 
         <div className=' cursor-pointer md:relative md:left-[20px] w-full right-[15px] relative' >
 
-
           <Link
             href="/user"
-            className=" text-lg hover:bg-blue-500 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent bg-fondo1 z-50 flex justify-center items-center gap-x-2 w-full  h-full "
+            className=" text-lg hover:bg-blue-500 text-white font-semibold hover:text-white py-0.5 px-2 hover:border-transparent bg-stone-800 z-50 flex justify-center items-center gap-x-2 w-full  h-full "
           >
-            <h2 className='border-r-[1px] border-black/40 px-2 h-full'>Entrar </h2>
+            <h2 className='border-r-[1px] border-black/40 px-2 h-full'>Entrar</h2>
             <MdAccountCircle />
           </Link>
 
@@ -53,7 +52,7 @@ function SigIn() {
           <Link
 
             href="/user"
-            className="bg-fondo1  text-lg hover:bg-black/90 text-black font-semibold hover:text-white py-0.5 px-2 hover:border-transparent z-50 flex w-full h-full"
+            className="bg-stone-800  text-lg hover:bg-black/90 text-white font-semibold hover:text-white py-0.5 px-2 hover:border-transparent z-50 flex w-full h-full"
           >
             <h2>UNIRSE</h2>
 

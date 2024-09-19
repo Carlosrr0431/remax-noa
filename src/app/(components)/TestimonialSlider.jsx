@@ -34,28 +34,28 @@ const testimonialData = [
 
     {
         image: Imagen1,
-        name: "Nick Jona",
-        position: "Apostol",
-        message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    },
-    {
-        image: Imagen2,
-        name: "Jhon Bolovir",
+        name: "Samanta",
         position: "Apostol",
         message:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
     },
     {
         image: Imagen3,
-        name: "Seven king",
+        name: "Fernando",
         position: "Apostol",
         message:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
     },
     {
-        image: Imagen2,
-        name: "Nicolas Kage",
+        image: Imagen1,
+        name: "Samanta",
+        position: "Apostol",
+        message:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+    },
+    {
+        image: Imagen3,
+        name: "Ezequiel",
         position: "Apostol",
         message:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
@@ -96,7 +96,7 @@ const TestimonialSlider = () => {
                 delay: 5000
             }}
             modules={[Navigation, Pagination, Autoplay]}
-            className="h-[50%] w-[100%] md:w-[80%] relative top-[150px] intro2"
+            className="sm:h-full w-[100%] md:w-[80%] relative items-center flex justify-center sm:bottom-[80px] mb-[100px] bottom-[100px] h-[80%] "
         >
 
 
@@ -123,9 +123,9 @@ const TestimonialSlider = () => {
                                     />{" "}
                                 </div>
                                 {/* name */}
-                                <div className="text-lg text-center w-full mb-4">{person.name}</div>
+                                <div className="text-lg text-black text-center w-full mb-4">{person.name}</div>
                                 {/* position */}
-                                <div className="text-[10px] uppercase font-extralight tracking-widest text-center w-[200px]">{person.message}</div>
+                                <div className="text-[12px] text-black uppercase tracking-widest text-center w-[200px]">{person.message}</div>
 
 
                             </div>

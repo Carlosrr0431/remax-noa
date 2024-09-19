@@ -8,7 +8,7 @@ export const Ingresos = () => {
     useEffect(() => {
         const getSupabaseOficial = async () => {
             let data = await supabaseClient
-                .from("pagos")
+                .from("formularioIngreso")
                 .select("*").order('id', { ascending: true })
 
             setIngresos(data.data)
@@ -33,18 +33,18 @@ export const Ingresos = () => {
                             </th>
                             <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
                                 <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-                                    Tipo
+                                    Oficina
                                 </p>
                             </th>
 
                             <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
                                 <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-                                    Fecha de pago
+                                    Telefono
                                 </p>
                             </th>
                             <th class="p-4 border-y border-blue-gray-100 bg-blue-gray-50/50">
                                 <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-                                    Monto
+                                    Fecha de Ingreso
                                 </p>
                             </th>
 
@@ -72,20 +72,25 @@ export const Ingresos = () => {
                                     <td class="p-4 border-b border-blue-gray-50">
                                         <div class="flex flex-col">
                                             <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                                {user.tipoPlan}
+                                                {user.oficina}
                                             </p>
 
                                         </div>
                                     </td>
 
                                     <td class="p-4 border-b border-blue-gray-50">
-                                        <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                            {user.fechaPago}
-                                        </p>
+                                        <div class="flex flex-col">
+                                            <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                                                {user.telefono}
+                                            </p>
+
+                                        </div>
                                     </td>
+
+
                                     <td class="p-4 border-b border-blue-gray-50">
                                         <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                                            {user.monto}
+                                            {user.created_at.substr(0, 10).split('-').reverse().join('/')}
                                         </p>
                                     </td>
 

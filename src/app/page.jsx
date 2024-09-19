@@ -1,26 +1,46 @@
 "use client"
 
-import Image from "next/image";
-import Degradado from './public/capas.svg'
-import Socials from "./(components)/Socials";
-import { useEffect, useRef, useState } from "react";
-import { Beneficios } from "./(components)/Beneficios";
-import { Sponsor } from "./(components)/Sponsor";
+import { useRef, useState } from "react";
 import TestimonialSlider from "./(components)/TestimonialSlider";
 import Link from "next/link";
-import SwiperGym from "./(components)/SwiperGym";
-import Logo from './public/logo biggest.svg'
-import Video from './public/3196220-hd_1920_1080_25fps.mp4'
+import Video from './public/video_convención 2024.mp4'
 import { useAppContext } from "./(context)/AppWrapper";
+import { FormularioCaptacion } from "./(components)/FormularioCaptacion";
+import { AnimatedTextword } from "./(components)/AnimatedTextword";
+
+import { motion } from "framer-motion";
+import { VisionValores } from "./(components)/VisionValores";
+import { VisionValores2 } from "./(components)/VisionValores2";
+import { SwiperOficina } from "./(components)/SwiperOficinas";
+import Logo from './public/LOGO REMAX.svg'
+import Image from "next/image";
+import Socials from "./(components)/Socials";
+import Redes from "./(components)/Redes";
+import { FooterSencillo } from "./(components)/FooterSencillo";
+
+const fadeInAnimationVariants = {
+  initial: (i) => ({
+    opacity: 0,
+    translateY: -50,
+  }),
+  animate: (i) => (
+    {
+      opacity: 1, translateX: 0, translateY: 0,
+      transition: {
+        duration: 0.8,
+        delay: i * 0.4,
+
+      }
+    }
+  )
+}
 
 const Home = () => {
 
-  const [showModal, setShowModal] = useState(false);
   const container = useRef()
-  const { setCambioHeader} = useAppContext()
+  const { setCambioHeader } = useAppContext()
   const [scroll, setScroll] = useState(0)
-
-
+  const scrollRef = useRef()
 
   const handleScroll = () => {
 
@@ -39,50 +59,55 @@ const Home = () => {
       <section className="w-full h-full  " >
         <div className="w-full h-full   ">
           <div className={` text-center montserrat flex   flex-col justify-center xl:mx-auto w-full items-center  xl:text-center h-full container `}>
-            <h1
+            {/* <h1
 
-              className=" h2 text-[32px] xl:text-[45px] xl:w-[1200px] font-medium mx-auto items-center text-center fontMatroska"
+              className=" h2 text-[32px] xl:text-[45px] xl:w-[1100px] font-medium mx-auto items-center text-center fontMatroska"
             >
-              <span className="texto-borde">movernos</span>, movernos SANAMENTE <br />
-            </h1>
+              <span className="">Únete al Éxito con</span> RE/MAX Noa Salta <br />
+            </h1> */}
 
-            <Link href={'/planes'}>
-              <button class=" text-black  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-fondo1 hover:border-transparent ">
-                VER PLANES
-              </button></Link>
+            <AnimatedTextword text="Únete al Éxito con RE/MAX NOA Salta" />
+
+            <Link href={'/'}>
+              {/* <Button class="text-white  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-sky-950 hover:border-transparent rounded-sm" variant="outline">UNIRSE </Button> */}
+              <motion.button initial="initial"
+                variants={fadeInAnimationVariants}
+                whileInView="animate"
+                viewport={{ once: true }}
+                custom={1} className="text-white  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-sky-950 hover:border-transparent rounded-sm mt-[40px]">
+                UNIRSE
+              </motion.button>
+            </Link>
           </div>
         </div>
 
 
-        <div className="xl:bg-right xl:bg-no-repeat w-full h-full  translate-z-50  absolute inset-0   -z-20    ">
+        <div className="brightness-50 xl:bg-right xl:bg-no-repeat w-full h-full  translate-z-50  absolute inset-0   -z-20">
           <video src={Video} autoPlay muted loop className="object-cover h-[100%] w-[100%]" />
 
-          <Image src={Degradado}
+          {/* <Image src={Degradado}
             width={0}
 
             height={0}
             alt=""
-            className="w-full  h-full absolute z-20 inset-0 object-cover mix-blend-multiply" />
+            className="w-full  h-full absolute z-20 inset-0 object-cover mix-blend-multiply" /> */}
         </div>
 
-
-
-
-
-
       </section>
 
-      <section className="h-[100%] w-[100%] bg-slate-800 ">
+      {/* <section className="h-[100%] w-[100%] bg-slate-800 ">
 
         <SwiperGym />
+      </section> */}
+      <section id="formulario" className="h-[100%] w-[100%] bg-slate-800" ref={scrollRef}>
+        <FormularioCaptacion scrollRef={scrollRef} />
       </section>
 
-      <section className="h-[100%] w-[100%] bg-slate-800 ">
-
+      {/* <section className="h-[100%] w-[100%] bg-slate-800 ">
         <Beneficios />
-      </section>
+      </section> */}
 
-{/* 
+      {/* 
 
       <section className="h-[50%] w-[100%] bg-slate-600">
         <Sponsor />
@@ -90,46 +115,63 @@ const Home = () => {
 
 
 
-      <section className="h-full w-[100%] bg-slate-800 ">
+      <section id="nosotros" className="h-screen w-[100%] bg-white">
+        <VisionValores />
 
-        <h1 className='bg-rgb(178, 190, 181) text-center flex justify-center text-[40px] mx-auto top-20 relative intro2'>Nuestros Testimonios</h1>
+      </section>
+
+
+      <section className="h-screen w-[100%] bg-white mt-[600px] sm:mt-[60px]">
+        <SwiperOficina />
+      </section>
+
+
+      <section id="testimonios" className="h-[60%] w-[100%] bg-gray-300 space-y-8 mt-[50px] sm:mt-0 sm:space-y-0 ">
+        <h1 className='bg-rgb(178, 190, 181) text-center flex justify-center text-[40px]  bottom-[130px] sm:bottom-[80px] mx-auto relative text-black'>Nuestros Testimonios</h1>
         <TestimonialSlider />
       </section>
 
-      <footer class="w-full bg-gray-900 h-[700px] sm:h-[320px]">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="mb-[80px] sm:mb-0">
+        <FooterSencillo />
+      </section>
 
-          <div class="py-16 flex justify-between items-center flex-col gap-8 lg:flex-row">
-            <div class="flex justify-center ">
+      {/* <footer class="w-full bg-black max-h-[200px] relative sm:h-[150px]">
+
+        <div className="flex flex-col">
+
+          <div className="flex justify-center items-center relative bottom-[20px]">
+            <Link href="/" className={`lg:mx-0 lg:start-1 lg:translate-y-6 lg:items-start lg:-translate-x-[280px]`}>
               <Image
                 src={Logo}
-                width={180}
-                height={100}
+                width={120}
+                height={80}
                 alt=""
                 priority={true}
-                // lg:mx-0 lg:start-1 lg:translate-y-14 lg:items-start lg:-translate-x-[80px]
-                className={``}
-              />
-            </div>
-            <ul class="text-lg text-center sm:flex items-cente justify-center gap-14 lg:gap-10 xl:gap-14 transition-all duration-500">
 
-              <li class="sm:my-0 my-2" ><a href="#" class="text-white hover:text-gray-400">Planes</a></li>
-              <li ><a href="#" class="text-white hover:text-gray-400">Cursos</a></li>
-              <li class="sm:my-0 my-2"><a href="#" class="text-white hover:text-gray-400">Ubicacion</a></li>
+              /></Link>
+
+            <ul class="text-lg text-center sm:flex items-center justify-center gap-14 lg:gap-10 xl:gap-14 transition-all duration-500 mt-[50px] -translate-x-[50px]">
+
+              <li class="sm:my-0 my-2" ><a href="#" class="text-white hover:text-gray-400">Nosotros</a></li>
               <li ><a href="#" class="text-white hover:text-gray-400">Soporte</a></li>
+              <li class="sm:my-0 my-2"><a href="#" class="text-white hover:text-gray-400">Ubicacion</a></li>
+              <li ><a href="#" class="text-white hover:text-gray-400">Contactanos</a></li>
             </ul>
-            <div class="flex  space-x-4 sm:justify-center  ">
-              <Socials />
-            </div>
           </div>
 
-          <div class="py-7 border-t border-gray-700">
-            <div class="flex items-center justify-center">
-              <span class="text-gray-400 ">©<a href="https://pagedone.io/">Faro IT</a> 2024, Todos los derechos reservados.</span>
+
+
+          <div class=" border-t border-gray-700  ">
+            <div class="flex items-center justify-center  relative top-[20px]">
+              <Redes />
+              <span class="text-gray-400 text-md -translate-x-[70px] ">©<a href="https://pagedone.io/">REMAX NOA IT</a> 2024, Todos los derechos reservados.</span>
             </div>
           </div>
         </div>
-      </footer>
+
+      </footer> */}
+
+
     </main >
   );
 };

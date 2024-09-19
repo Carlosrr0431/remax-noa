@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { Suspense, useEffect } from 'react'
 
 import { signIn, useSession, signOut } from 'next-auth/react'
-import Logo from '../../public/logo biggest.svg'
+import Logo from '../../public/LOGO REMAX.svg'
 import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
@@ -15,7 +15,10 @@ const Login = () => {
 
     const { data: session } = useSession()
 
+    console.log(search);
+
     useEffect(() => {
+
 
 
         if (session?.user?.name != undefined) {

@@ -93,7 +93,7 @@ const Modal = ({ setShowModal, nameCard }) => {
                         />
                     </span>
 
-                    <div className="space-x-2">  <button onClick={setShowModal} type="button" class="px-3 py-2 bg-red-500 border-gray-900  hover:bg-red-600  focus:outline-none   text-white  rounded-[5px]">
+                    <div className="space-x-2">  <button onClick={setShowModal} type="button" class="px-3 py-2 bg-red-500 border-gray-900  hover:bg-red-600  focus:outline-none   text-black  rounded-[5px]">
                         Cancelar
                     </button>
                         <button type="submit" class="px-3 py-2  bg-gradient-to-r from-green-500 to-green-600  focus:outline-none  hover:bg-gradient-to-r hover:from-green-700 hover:to-green-700   text-white  rounded-[5px]">

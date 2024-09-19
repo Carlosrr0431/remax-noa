@@ -9,13 +9,13 @@ const handler = NextAuth({
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
 
       // authorization solo es para modo de desarrollo
-      // authorization: {
-      //   params: {
-      //     prompt: "consent",
-      //     access_type: "offline",
-      //     response_type: "code",
-      //   },
-      // },
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
 
       profile(profile) {
         return {
@@ -32,55 +32,50 @@ const handler = NextAuth({
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
       // console.log("user: " + user.email);
-
-      const result = await supabaseClient
-        .from("usuarios")
-        .select("email")
-        .match({ email: user?.email });
-
-      const data = result.data;
-
-      console.log("data: " + data);
-
-      if (data?.length == 0) {
-        const result2 = await supabaseClient.from("usuarios").insert({
-          nombre: user.name,
-          email: user.email,
-          imagenUrl: user.image,
-          role: "member",
-          puntos: 0,
-          dias: 0,
-        });
-
-        console.log("se creo el usuario: " + result2);
-      }
+      // const result = await supabaseClient
+      //   .from("usuarios")
+      //   .select("email")
+      //   .match({ email: user?.email });
+      // const data = result.data;
+      // console.log("data: " + data);
+      // if (data?.length == 0) {
+      //   const result2 = await supabaseClient.from("usuarios").insert({
+      //     nombre: user.name,
+      //     email: user.email,
+      //     imagenUrl: user.image,
+      //     role: "member",
+      //     puntos: 0,
+      //     dias: 0,
+      //   });
+      //   console.log("se creo el usuario: " + result2);
+      // }
 
       return true;
     },
 
     async jwt({ token, user }) {
-      let { data: usuarios, error } = await supabaseClient
-        .from("usuarios")
-        .select("*")
-        .order("id", { ascending: true });
+      // let { data: usuarios, error } = await supabaseClient
+      //   .from("usuarios")
+      //   .select("*")
+      //   .order("id", { ascending: true });
+      // console.log("USUARIO EMAIL: " + user?.email);
+      // if (user?.email != undefined) {
+      //   if (
+      //     usuarios
+      //       .filter((e) => e.role == "admin")
+      //       .find((e) => e.email == user?.email)
+      //   )
+      //     token.role = "admin";
+      //   else if (
+      //     usuarios
+      //       .filter((e) => e.role == "user admin")
+      //       .find((e) => e.email == user?.email)
+      //   )
+      //     token.role = "user admin";
+      //   else token.role = "member";
+      // }
 
-      console.log("USUARIO EMAIL: " + user?.email);
-
-      if (user?.email != undefined) {
-        if (
-          usuarios
-            .filter((e) => e.role == "admin")
-            .find((e) => e.email == user?.email)
-        )
-          token.role = "admin";
-        else if (
-          usuarios
-            .filter((e) => e.role == "user admin")
-            .find((e) => e.email == user?.email)
-        )
-          token.role = "user admin";
-        else token.role = "member";
-      }
+      token.role = "admin";
 
       return token;
     },

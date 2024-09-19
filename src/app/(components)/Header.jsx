@@ -9,9 +9,8 @@ import { usePathname } from "next/navigation";
 import Loguear from './Loguear';
 
 
-import Logo from '../public/logo biggest.svg'
+import Logo from '../public/LOGO REMAX.svg'
 import { useAppContext } from "../(context)/AppWrapper";
-import { useEffect } from "react";
 
 const Header = () => {
 
@@ -29,11 +28,11 @@ const Header = () => {
                 <Image
                   src={Logo}
                   width={180}
-                  height={100}
+                  height={160}
                   alt=""
                   priority={true}
                   // lg:mx-0 lg:start-1 lg:translate-y-14 lg:items-start lg:-translate-x-[80px]
-                  className={`${pathname == '/cursos' || pathname == '/planes' || pathname == '/about' || cambioHeader ? 'hidden -z-20' : ''} object-cover`}
+                  className={`${pathname == '/cursos'  || pathname == '/planes' || pathname == '/about' || cambioHeader ? 'hidden -z-20' : ''} object-cover`}
 
                 />
 

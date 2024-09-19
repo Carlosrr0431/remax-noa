@@ -10,7 +10,7 @@ import { Suspense } from "react";
 
 
 export const metadata = {
-  title: "Biggest GYM",
+  title: "RE/MAX NOA SALTA",
   description: "Gimnasio enfocado en aumentar tu potencial",
   manifest: "/manifest.json",
 };

@@ -11,7 +11,7 @@ import { GiPrayer } from "react-icons/gi";
 import DashBoardInfoContenido from '@/app/(components)/DashBoardInfoContenido';
 import { TbChartInfographic } from "react-icons/tb";
 import { FaBalanceScale } from "react-icons/fa";
-import { BiMoneyWithdraw } from "react-icons/bi";
+import { BiLogOut, BiMoneyWithdraw } from "react-icons/bi";
 import { HiCog } from 'react-icons/hi2';
 import { signOut, useSession } from 'next-auth/react';
 
@@ -79,22 +79,24 @@ const DashBoard = () => {
                     <BiMoneyWithdraw className="w-6 h-6 -mr-4" />
                   </div>
                   Ingresos
-                </div><div role="button"
-                  onClick={() => handleClick("Control De Ingresos")}
-                  className={`flex items-center text-white w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 gap-x-4 ${tipo == 'Control De Ingresos' ? 'font-bold' : ''}`}>
+                </div>
+                  {/* <div role="button"
+                    onClick={() => handleClick("Control De Ingresos")}
+                    className={`flex items-center text-white w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 gap-x-4 ${tipo == 'Control De Ingresos' ? 'font-bold' : ''}`}>
                     <div className="grid mr-2 place-items-center">
-                      {/* <Image src={Primicia} alt="" width={0} height={0} className="w-6 h-6  " /> */}
+
                       <TbChartInfographic className="w-6 h-6  " />
                     </div>
                     Control De Ingresos
-                  </div><div role="button"
+                  </div>
+                  <div role="button"
                     onClick={() => handleClick("Control de Precios")}
                     className={`flex items-center text-white w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 gap-x-4 ${tipo == 'Control de Precios' ? 'font-bold' : ''}`}>
                     <div className="grid mr-2 place-items-center">
                       <FaBalanceScale className="w-6 h-6" />
                     </div>
                     Control de Precios
-                  </div>
+                  </div> */}
 
                   <div role="button"
                     onClick={() => handleClick("Configurar")}
@@ -129,7 +131,7 @@ const DashBoard = () => {
             }
 
 
-            {/* <div role="button"
+            <div role="button"
               onClick={async () => {
                 await signOut({
                   callbackUrl: "/",
@@ -137,10 +139,11 @@ const DashBoard = () => {
               }}
               className={`flex  text-lg w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 text-white focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 mt-[220px] mx-auto ml-8 font-semibold ${panel == 'Contenido' ? 'mt-[390px]' : ''}`}>
               <div className="grid mr-2 place-items-center ">
-                <TbLogout2 className="w-5 h-5" />
+                {/* <TbLogout className="w-5 h-5" /> */}
+                <BiLogOut className="w-5 h-5" />
               </div>
               Salir
-            </div> */}
+            </div>
 
           </nav>
         </div>

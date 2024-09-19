@@ -15,6 +15,33 @@ cloudinary.config({
   api_secret: "OuD06O8Izb2EVH8rnWYr9Xjfeak",
 });
 
+export async function guardarFomulario(datos) {
+  const cookieStore = cookies();
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    {
+      cookies: () => cookieStore,
+    }
+  );
+
+  console.log(datos);
+
+  const result3 = await supabase.from("formularioIngreso").insert({
+    nombre: datos.username,
+    email: datos.email,
+    oficina: datos.oficina,
+    telefono: datos.telefono,
+  });
+
+  console.log(result3);
+
+  return { message: "Success" };
+}
+
+
+
 export async function postData(formData, userName, email) {
   const message = formData.get("message");
 
@@ -397,162 +424,166 @@ function checkTelef(cadena) {
 }
 
 export async function adminUser(datos, tipo, id, precio) {
-  const cookieStore = cookies();
-  let message = "";
-  let error = [];
+  // const cookieStore = cookies();
+  // let message = "";
+  // let error = [];
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    {
-      cookies: () => cookieStore,
-    }
-  );
+  // const supabase = createServerClient(
+  //   process.env.NEXT_PUBLIC_SUPABASE_URL,
+  //   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  //   {
+  //     cookies: () => cookieStore,
+  //   }
+  // );
 
   const nombre = datos?.name;
   const email = datos?.email;
-  const telefono = datos?.telefono;
-  const dni = datos?.dni;
-  const plan = datos?.plan;
-  const edad = datos?.edad;
-  const dias = datos?.dias;
+  const subtitulo = datos?.subtitulo;
+  const mensaje = datos?.mensaje;
+  // const telefono = datos?.telefono;
+  // const dni = datos?.dni;
+  // const plan = datos?.plan;
+  // const edad = datos?.edad;
+  // const dias = datos?.dias;
 
-  const err = checkTelef(telefono);
-  error[0] = err;
-  error[1] = "";
+  // const err = checkTelef(telefono);
+  // error[0] = err;
+  // error[1] = "";
 
-  const result2 = await supabase
-    .from("usuarios")
-    .select("*")
-    .or(`dni.eq.${dni},email.eq.${email}`);
+  // const result2 = await supabase
+  //   .from("usuarios")
+  //   .select("*")
+  //   .or(`dni.eq.${dni},email.eq.${email}`);
 
-  const result1 = await supabase
-    .from("usuarios")
-    .select("*")
-    .match({ dni: dni });
+  // const result1 = await supabase
+  //   .from("usuarios")
+  //   .select("*")
+  //   .match({ dni: dni });
 
-  const result3 = await supabase
-    .from("usuarios")
-    .select("*")
-    .match({ email: email });
+  // const result3 = await supabase
+  //   .from("usuarios")
+  //   .select("*")
+  //   .match({ email: email });
 
-  const dataDni = result1.data;
-  const data = result2.data;
-  const dataEmail = result3.data;
+  // const dataDni = result1.data;
+  // const data = result2.data;
+  // const dataEmail = result3.data;
 
-  if (tipo == "Agregar") {
-    if (
-      (data == null || data?.length == 0) &&
-      err != "No responde a la plantilla"
-    ) {
-      const result2 = await supabase.from("usuarios").insert({
-        nombre: nombre,
-        email: email,
-        imagenUrl: "",
-        telefono: telefono,
-        dni: dni,
-        edad: edad,
-        tipoPlan: plan,
-        fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
-        dias: 0,
-        puntos: 0,
-        role: "member",
-        dias: dias
-      });
+  // if (tipo == "Agregar") {
+  //   if (
+  //     (data == null || data?.length == 0) &&
+  //     err != "No responde a la plantilla"
+  //   ) {
+  //     const result2 = await supabase.from("usuarios").insert({
+  //       nombre: nombre,
+  //       email: email,
+  //       imagenUrl: "",
+  //       telefono: telefono,
+  //       dni: dni,
+  //       edad: edad,
+  //       tipoPlan: plan,
+  //       fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
+  //       dias: 0,
+  //       puntos: 0,
+  //       role: "member",
+  //       dias: dias
+  //     });
 
-      const result3 = await supabase.from("pagos").insert({
-        nombre: nombre,
-        email: email,
-        dni: dni,
-        tipoPlan: plan,
-        fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
-        monto: precio,
-      });
+  //     const result3 = await supabase.from("pagos").insert({
+  //       nombre: nombre,
+  //       email: email,
+  //       dni: dni,
+  //       tipoPlan: plan,
+  //       fechaPago: moment().tz("America/Argentina/Salta").format("DD/MM/yyyy"),
+  //       monto: precio,
+  //     });
 
-      message = "Se agrego correctamente";
-      console.log(result2);
-    } else if (data.length >= 1) {
-      message = "Los datos ya existen.";
-      error[1] = "DNI o Email ya existente";
-    }
-  } else if (tipo == "Modificar") {
-    if (data.length == 0 && err != "No responde a la plantilla") {
-      const result2 = await supabase
-        .from("usuarios")
-        .update({
-          nombre: nombre,
-          email: email,
-          imagenUrl: "",
-          telefono: telefono,
-          dni: dni,
-          edad: edad,
-          tipoPlan: plan,
-          dias: dias
-        })
-        .eq("id", id);
+  //     message = "Se agrego correctamente";
+  //     console.log(result2);
+  //   } else if (data.length >= 1) {
+  //     message = "Los datos ya existen.";
+  //     error[1] = "DNI o Email ya existente";
+  //   }
+  // } else if (tipo == "Modificar") {
+  //   if (data.length == 0 && err != "No responde a la plantilla") {
+  //     const result2 = await supabase
+  //       .from("usuarios")
+  //       .update({
+  //         nombre: nombre,
+  //         email: email,
+  //         imagenUrl: "",
+  //         telefono: telefono,
+  //         dni: dni,
+  //         edad: edad,
+  //         tipoPlan: plan,
+  //         dias: dias
+  //       })
+  //       .eq("id", id);
 
-      message = "Se actualizo correctamente";
-    } else if (
-      data.length == 1 &&
-      id == data[0].id &&
-      err != "No responde a la plantilla"
-    ) {
-      if (data[0].tipoPlan != plan) {
-        const result2 = await supabase
-          .from("usuarios")
-          .update({
-            nombre: nombre,
-            email: email,
-            imagenUrl: "",
-            telefono: telefono,
-            dni: dni,
-            edad: edad,
-            tipoPlan: plan,
-            dias: data[0].dias,
-            fechaPago: moment()
-              .tz("America/Argentina/Salta")
-              .format("DD/MM/yyyy"),
-          })
-          .eq("id", id);
-      } else {
-        const result2 = await supabase
-          .from("usuarios")
-          .update({
-            nombre: nombre,
-            email: email,
-            imagenUrl: "",
-            telefono: telefono,
-            dni: dni,
-            edad: edad,
-            tipoPlan: plan,
-            dias: dias
-          })
-          .eq("id", id);
-      }
+  //     message = "Se actualizo correctamente";
+  //   } else if (
+  //     data.length == 1 &&
+  //     id == data[0].id &&
+  //     err != "No responde a la plantilla"
+  //   ) {
+  //     if (data[0].tipoPlan != plan) {
+  //       const result2 = await supabase
+  //         .from("usuarios")
+  //         .update({
+  //           nombre: nombre,
+  //           email: email,
+  //           imagenUrl: "",
+  //           telefono: telefono,
+  //           dni: dni,
+  //           edad: edad,
+  //           tipoPlan: plan,
+  //           dias: data[0].dias,
+  //           fechaPago: moment()
+  //             .tz("America/Argentina/Salta")
+  //             .format("DD/MM/yyyy"),
+  //         })
+  //         .eq("id", id);
+  //     } else {
+  //       const result2 = await supabase
+  //         .from("usuarios")
+  //         .update({
+  //           nombre: nombre,
+  //           email: email,
+  //           imagenUrl: "",
+  //           telefono: telefono,
+  //           dni: dni,
+  //           edad: edad,
+  //           tipoPlan: plan,
+  //           dias: dias
+  //         })
+  //         .eq("id", id);
+  //     }
 
-      message = "Se actualizo correctamente";
-    } else {
-      message = "No se actualizo correctamente";
+  //     message = "Se actualizo correctamente";
+  //   } else {
+  //     message = "No se actualizo correctamente";
 
-      if (dataDni.length >= 1 && dataDni[0].id != id)
-        error[1] = "DNI ya existente";
+  //     if (dataDni.length >= 1 && dataDni[0].id != id)
+  //       error[1] = "DNI ya existente";
 
-      if (dataDni.length >= 1 && dataEmail[0].id != id)
-        error[1] = "Email ya existente";
-    }
-  } else if (data.length >= 1) {
-    message = "Los datos ya existen.";
+  //     if (dataDni.length >= 1 && dataEmail[0].id != id)
+  //       error[1] = "Email ya existente";
+  //   }
+  // } else if (data.length >= 1) {
+  //   message = "Los datos ya existen.";
 
-    if (dataDni.length >= 1 && dataDni[0].id != id)
-      error[1] = "DNI ya existente";
+  //   if (dataDni.length >= 1 && dataDni[0].id != id)
+  //     error[1] = "DNI ya existente";
 
-    if (dataDni.length >= 1 && dataEmail[0].id != id)
-      error[1] = "Email ya existente";
-  } else if (tipo == "Eliminar") {
-    const result2 = await supabase.from("usuarios").delete().eq("id", id);
-  }
-  console.log(message);
-  return { message, error };
+  //   if (dataDni.length >= 1 && dataEmail[0].id != id)
+  //     error[1] = "Email ya existente";
+  // } else if (tipo == "Eliminar") {
+  //   const result2 = await supabase.from("usuarios").delete().eq("id", id);
+  // }
+  // console.log(message);
+  // return { message, error };
+
+  return { message: "Mensaje enviado correctamente" };
 }
 
 export async function registrarIngreso(dias, id) {
@@ -594,10 +625,7 @@ export async function actualizarPlan(datos, precio, id) {
     }
   );
 
-
   console.log(datos.name, datos.email, datos.plan, datos.modoPago, precio);
-  
-
 
   const result3 = await supabase.from("pagos").insert({
     nombre: datos.name,
