@@ -14,12 +14,14 @@ import Home from "../public/inicio icono.svg";
 import Cursos from "../public/cursos online.svg";
 import Planes from "../public/planes presenciales icono.svg";
 import Conocenos from "../public/conocenos icono.svg";
+import Testimonios from "../public/feedback-review_13085382.svg";
+import Contactar from "../public/bubble-discussion_17699776.svg";
 
 export const navData = [
-  { name: "Inicio", path: "/", icon: Home },
-  { name: "Conocenos", path: "/about", icon: Conocenos },
-  { name: "Planes", path: "/planes", icon: Planes },
-  { name: "Cursos", path: "/cursos", icon: Cursos },
+  { name: "Inicio", path: "/#inicio", icon: Home },
+  { name: "Conocenos", path: "/#nosotros", icon: Conocenos },
+  { name: "Testimonios", path: "/#testimonios", icon: Testimonios },
+  { name: "Contactar", path: "/contactanos", icon: Contactar },
 ]
 const Nav = () => {
   const pathname = usePathname();

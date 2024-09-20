@@ -38,12 +38,12 @@ import {
 
 const formSchema = z.object({
     username: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
+        message: "El nombre debe contener al menos 4 letras",
     }),
-
-    email: z.string().min(2, {
-        message: "Email must be at least 2 characters.",
-    }),
+    email: z
+        .string()
+        .min(1, { message: "El correo es invalido" })
+        .email("Debe completar como ejemplo@ejem.com"),
 
     oficina: z.string({ required_error: "Es necesario seleccionar una oficina" }),
 
@@ -116,7 +116,7 @@ export const FormularioCaptacion = ({ scrollRef }) => {
                                 </CardHeader>
 
                                 <CardContent className="space-y-4">
-{/* sm:space-x-2 sm:justify-center sm:items-center space-y-2 */}
+                                    {/* sm:space-x-2 sm:justify-center sm:items-center space-y-2 */}
                                     <div className="sm:flex sm:space-x-2 space-y-2 sm:space-y-0">
                                         <FormField
                                             control={form.control}

@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
                 {children}
                 <Toaster position="bottom-center" richColors />
 
-                <div className="fixed xl:right-0 xl:bottom-0 xl:z-50 md:mb-8 md:mr-6">
+                <div className="right-0 bottom-0 z-50 mb-[120px] mr-6     fixed xl:right-0 xl:bottom-0 xl:z-50 md:mb-8 md:mr-6">
 
 
                   <WhatsApp />

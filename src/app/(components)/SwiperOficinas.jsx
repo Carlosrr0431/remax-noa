@@ -95,10 +95,11 @@ export const SwiperOficina = () => {
 
                         />
 
-                        <button
-                            className=" bg-black /90  font-semibold text-white sm:py-0.5 sm:px-4  text-[20px] hover:border-transparent hover:bg-sky-900  rounded-sm absolute translate-z-50 top-[80%] left-[15%] sm:left-[36%] items-center sm:w-[350px] p-2 sm:h-[50px] w-[250px]">
-                            SUMATE AL EQUIPO
-                        </button>
+                        <Link href={'/contactanos'}>
+                            <button
+                                className=" bg-black /90  font-semibold text-white sm:py-0.5 sm:px-4  text-[20px] hover:border-transparent hover:bg-sky-900  rounded-sm absolute translate-z-50 top-[80%] left-[15%] sm:left-[36%] items-center sm:w-[350px] p-2 sm:h-[50px] w-[250px]">
+                                SUMATE AL EQUIPO
+                            </button></Link>
                     </div> : <Image
 
                         alt="image 2"
@@ -123,10 +124,11 @@ export const SwiperOficina = () => {
 
                         />
 
-                        <button
-                            className=" bg-black /90  font-semibold text-white sm:py-0.5 sm:px-4  text-[20px] hover:border-transparent hover:bg-sky-900  rounded-sm absolute translate-z-50 top-[80%] left-[15%] sm:left-[36%] items-center sm:w-[350px] p-2 sm:h-[50px] w-[250px]">
-                            SUMATE AL EQUIPO
-                        </button>
+                        <Link href={'/contactanos'}>
+                            <button
+                                className=" bg-black /90  font-semibold text-white sm:py-0.5 sm:px-4  text-[20px] hover:border-transparent hover:bg-sky-900  rounded-sm absolute translate-z-50 top-[80%] left-[15%] sm:left-[36%] items-center sm:w-[350px] p-2 sm:h-[50px] w-[250px]">
+                                SUMATE AL EQUIPO
+                            </button></Link>
                     </div> : <Image
                         alt="image 2"
                         className="h-full  w-full object-cover"
@@ -150,10 +152,11 @@ export const SwiperOficina = () => {
 
                         />
 
-                        <button
-                            className=" bg-black /90  font-semibold text-white sm:py-0.5 sm:px-4  text-[20px] hover:border-transparent hover:bg-sky-900  rounded-sm absolute translate-z-50 top-[80%] left-[15%] sm:left-[36%] items-center sm:w-[350px] p-2 sm:h-[50px] w-[250px]">
-                            SUMATE AL EQUIPO
-                        </button>
+                        <Link href={'/contactanos'}>
+                            <button
+                                className=" bg-black /90  font-semibold text-white sm:py-0.5 sm:px-4  text-[20px] hover:border-transparent hover:bg-sky-900  rounded-sm absolute translate-z-50 top-[80%] left-[15%] sm:left-[36%] items-center sm:w-[350px] p-2 sm:h-[50px] w-[250px]">
+                                SUMATE AL EQUIPO
+                            </button></Link>
                     </div> : <Image
                         alt="image 2"
                         className="h-full  w-full object-cover"

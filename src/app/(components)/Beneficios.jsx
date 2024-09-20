@@ -75,10 +75,10 @@ export const Beneficios = ({ scrollNum }) => {
                 </section>
 
             </div>
-
+{/* 
             {
                 showModal && <ModalArea tipoArea={tipoArea} showModal={showModal} setShowModal={() => setShowModal(false)} />
-            }
+            } */}
         </div>
     )
 }

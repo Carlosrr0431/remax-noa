@@ -56,7 +56,7 @@ const Home = () => {
 
     <main main className="h-full  w-full relative overflow-y-auto overflow-x-hidden  " onScroll={handleScroll} ref={container} >
 
-      <section className="w-full h-full  " >
+      <section className="w-full h-full  " id="inicio">
         <div className="w-full h-full   ">
           <div className={` text-center montserrat flex   flex-col justify-center xl:mx-auto w-full items-center  xl:text-center h-full container `}>
             {/* <h1
@@ -68,7 +68,7 @@ const Home = () => {
 
             <AnimatedTextword text="Únete al Éxito con RE/MAX NOA Salta" />
 
-            <Link href={'/'}>
+            <Link href={'#formulario'}>
               {/* <Button class="text-white  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-sky-950 hover:border-transparent rounded-sm" variant="outline">UNIRSE </Button> */}
               <motion.button initial="initial"
                 variants={fadeInAnimationVariants}
