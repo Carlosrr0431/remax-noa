@@ -14,24 +14,28 @@ const testimonialData = [
     {
         image: Jimena,
         name: "JIMENA CORNEJO LLORCA",
+        position: "Agente Inmobilario",
         message:
             "Trabajar en Remax es pasión, simplemente pasión. Amo mi trabajo y eso me lleva a dar lo mejor de mí. Estoy constantemente acompañada por todo un equipo de agentes, staff y brokers. ",
     },
     {
         image: Alejandro,
         name: "ALEJANDRO RODRIGUEZ",
+        position: "Agente Inmobilario",
         message:
             "Mi experiencia desde el primer momento en Remax fue transformadora. El ambiente de colaboración y apoyo constante me permitió desarrollar mi pasión por el servicio inmobiliario al máximo. ",
     },
     {
         image: Matias,
         name: "MATIAS FRADEJAS",
+        position: "Agente Inmobilario",
         message:
             "En Remax encontré un espacio de desafío y crecimiento personal, donde puedo desarrollarme profesionalmente y formar parte de un equipo comprometido con altos valores.",
     },
     {
         image: Alberto,
         name: "ALBERTO NANTERNE",
+        position: "Agente Inmobilario",
         message:
             "Es un trabajo individual en equipo, donde cada uno hace lo que mejor sabe hacer y se complementa con los demás para sinergizar relaciones de confianza y concretar sueños.",
     },
@@ -47,6 +51,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import { useAppContext } from '../(context)/AppWrapper';
 import { useEffect } from 'react';
+import { FaQuoteLeft } from 'react-icons/fa'
 
 const TestimonialSlider = () => {
 
@@ -71,7 +76,7 @@ const TestimonialSlider = () => {
                 delay: 5000
             }}
             modules={[Navigation, Pagination, Autoplay]}
-            className="sm:h-full w-[100%] md:w-[80%] relative items-center flex justify-center sm:bottom-[80px] mb-[100px] bottom-[100px] h-[80%] "
+            className="sm:h-full  w-[100%] md:w-[80%] relative items-center flex justify-center sm:bottom-[80px] mb-[100px] bottom-[100px] h-[80%]"
         >
 
 
@@ -101,10 +106,25 @@ const TestimonialSlider = () => {
                                 {/* name */}
                                 <div className="text-lg text-black text-center w-full mb-4">{person.name}</div>
                                 {/* position */}
-                                <div className="text-[12px] text-black uppercase tracking-widest text-center w-[300px]">{person.message}</div>
+                                {/* <div className="text-[12px] text-black uppercase tracking-widest text-center w-[300px] font-normal montserrat">{person.message}</div> */}
 
+                                <div className="text-[12px] text-black uppercase font-normal tracking-widest">{person.position}</div>
 
+                                <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
+                                    {/* quote & icon */}
+                                    <div className="mb-4">
+                                        <FaQuoteLeft className="text-4xl xl:text-6xl text-black/20 mx-auto md:mx-0 " />
+                                    </div>
+
+                                    {/* message */}
+                                    <div className="xl:w-[400px] xl:text-lg text-center md:text-left text-black">
+                                        {person.message}
+                                    </div>
+                                </div>
                             </div>
+
+
+
 
 
                         </div>
@@ -114,7 +134,7 @@ const TestimonialSlider = () => {
 
 
             })}
-        </Swiper>
+        </Swiper >
     );
 };
 
