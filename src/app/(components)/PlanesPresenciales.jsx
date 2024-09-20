@@ -3,8 +3,6 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
-import Imagenfondo1 from '../public/exercise-weights-iron-dumbbell-with-extra-plates.jpg'
-
 import { signIn, useSession, signOut } from 'next-auth/react'
 import { supabaseClient } from '@/supabase/client'
 import { useRouter } from "next/navigation";
@@ -197,10 +195,10 @@ export const PlanesPresenciales = () => {
                             className={``}
                         >
                             <button class="w-full px-4 py-2 mt-10 tracking-wide text-black capitalize transition-colors duration-300 transform bg-fondo1 rounded-md hover:bg-black hover:text-yellow-500 focus:outline-none focus:bg-black focus:ring focus:ring-blue-300 focus:ring-opacity-80">
-                            Consultar por Bases y Condiciones
+                                Consultar por Bases y Condiciones
                             </button>
                         </Link>
-{/* 
+                        {/* 
                         {
                             session?.user?.name == undefined ? <button onClick={() => {
                                 signIn('google', {
@@ -223,11 +221,7 @@ export const PlanesPresenciales = () => {
 
 
                 </div>
-                <Image src={Imagenfondo1}
-                    width={0}
-                    height={0}
-                    alt=""
-                    className="w-full  h-full fixed -z-10 opacity-50  inset-0 object-cover " />
+
             </div>
 
         </div>
