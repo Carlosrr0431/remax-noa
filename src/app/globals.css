@@ -34,6 +34,14 @@
     @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
   }
 
+
+  .imagenTestimonios{
+    width: 100px;
+    border-radius: 50%;
+    aspect-ratio: 1; /* Se ajusta al mismo valor que el width */
+    object-fit: cover;
+}
+
   .bg-fondo {
     background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px;

@@ -4,61 +4,36 @@ import Imagen1 from '../public/t-avt-1.png'
 import Imagen2 from '../public/t-avt-2.png'
 import Imagen3 from '../public/t-avt-3.png'
 
-const testimonialData2 = [
-
-    {
-        image: Imagen1,
-        name: "Silvia Loaza",
-        position: "Apostol",
-        message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    },
-    {
-        image: Imagen2,
-        name: "Silvia Loaza",
-        position: "Apostol",
-        message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    },
-    {
-        image: Imagen3,
-        name: "Claudio Loaza",
-        position: "Apostol",
-        message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    }
-
-];
+import Jimena from '../public/JIMENA CORNEJO (1).jpg'
+import Alejandro from '../public/ALEJANDRO 2 (1).jpg'
+import Matias from '../public/MATIAS FRADEJAS (1).jpg'
+import Alberto from '../public/ALBERTO (1).jpg'
 
 const testimonialData = [
 
     {
-        image: Imagen1,
-        name: "Samanta",
-        position: "Apostol",
+        image: Jimena,
+        name: "JIMENA CORNEJO LLORCA",
         message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+            "Trabajar en Remax es pasión, simplemente pasión. Amo mi trabajo y eso me lleva a dar lo mejor de mí. Estoy constantemente acompañada por todo un equipo de agentes, staff y brokers. ",
     },
     {
-        image: Imagen3,
-        name: "Fernando",
-        position: "Apostol",
+        image: Alejandro,
+        name: "ALEJANDRO RODRIGUEZ",
         message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+            "Mi experiencia desde el primer momento en Remax fue transformadora. El ambiente de colaboración y apoyo constante me permitió desarrollar mi pasión por el servicio inmobiliario al máximo. ",
     },
     {
-        image: Imagen1,
-        name: "Samanta",
-        position: "Apostol",
+        image: Matias,
+        name: "MATIAS FRADEJAS",
         message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+            "En Remax encontré un espacio de desafío y crecimiento personal, donde puedo desarrollarme profesionalmente y formar parte de un equipo comprometido con altos valores.",
     },
     {
-        image: Imagen3,
-        name: "Ezequiel",
-        position: "Apostol",
+        image: Alberto,
+        name: "ALBERTO NANTERNE",
         message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+            "Es un trabajo individual en equipo, donde cada uno hace lo que mejor sabe hacer y se complementa con los demás para sinergizar relaciones de confianza y concretar sueños.",
     },
 ];
 
@@ -120,12 +95,13 @@ const TestimonialSlider = () => {
                                         alt=""
                                         width={100}
                                         height={100}
+                                        className='imagenTestimonios '
                                     />{" "}
                                 </div>
                                 {/* name */}
                                 <div className="text-lg text-black text-center w-full mb-4">{person.name}</div>
                                 {/* position */}
-                                <div className="text-[12px] text-black uppercase tracking-widest text-center w-[200px]">{person.message}</div>
+                                <div className="text-[12px] text-black uppercase tracking-widest text-center w-[300px]">{person.message}</div>
 
 
                             </div>
