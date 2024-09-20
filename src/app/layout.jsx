@@ -7,7 +7,7 @@ import { Toaster } from "sonner";
 import WhatsApp from "./(components)/WhatsApp";
 import { Suspense } from "react";
 import { GoogleTagManager } from '@next/third-parties/google'
-
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: "RE/MAX NOA SALTA",
@@ -44,6 +44,8 @@ export default function RootLayout({ children }) {
 
 
               </main>
+
+              <Analytics />
             </AppWrapper>
           </Suspense>
         </Providers>
