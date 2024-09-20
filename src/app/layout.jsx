@@ -11,8 +11,8 @@ import { Suspense } from "react";
 
 export const metadata = {
   title: "RE/MAX NOA SALTA",
-  description: "Gimnasio enfocado en aumentar tu potencial",
-  manifest: "/manifest.json",
+  description: "Somos la RED Inmobilaria N°1 del mundo",
+  // manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }) {
