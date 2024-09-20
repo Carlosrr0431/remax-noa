@@ -1,40 +1,5 @@
 // testimonial data
 
-import Imagen1 from '../public/01-promos.jpg'
-import Imagen2 from '../public/gim2.jpg'
-import Imagen3 from '../public/t-avt-3.png'
-
-const testimonialData = [
-
-    {
-        image: Imagen1,
-        name: "Silvia Loaza",
-        position: "Apostol",
-        message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    },
-    {
-        image: Imagen2,
-        name: "Silvia Loaza",
-        position: "Apostol",
-        message:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    },
-    // {
-    //     image: Imagen3,
-    //     name: "Claudio Loaza",
-    //     position: "Apostol",
-    //     message:
-    //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    // },
-    // {
-    //     image: Imagen2,
-    //     name: "Silvia Loaza",
-    //     position: "Apostol",
-    //     message:
-    //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
-    // },
-];
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -142,21 +107,7 @@ const SwipperUser = () => {
 
 
 
-                        {ancho > 500 ? <Image
-                            src={elem.imagenUrl}
-                            alt="image 2"
-                            className="h-full  w-full object-cover"
-                            width={2000}
-                            height={2000}
 
-                        /> : <Image
-                            src={elem.imagenUrlCelular}
-                            alt="image 2"
-                            className="h-full  w-full object-cover"
-                            width={2000}
-                            height={2000}
-
-                        />}
 
 
                     </SwiperSlide>)
