@@ -1,5 +1,4 @@
-User-Agent: *
-Allow: /
-Disallow: /private/
+User-agent: *
+Disallow:
 
 Sitemap: https://remaxnoa.vercel.app/sitemap.xml
