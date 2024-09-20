@@ -43,7 +43,7 @@ const Header = () => {
 
             <Socials />
 
-            <div className="order-first relative left-[85px] sm:left-0 sm:order-none">
+            <div className="order-first relative left-[85px] sm:left-[70px]  sm:order-none">
               {/* <Loguear /> */}<Link href="/contactanos">
                 <Button variant="default" className="flex items-center space-x-2 rounded-[20px]">
                   <MessageCircle className="w-4 h-4" />

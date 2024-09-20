@@ -13,7 +13,7 @@ import {
     InputOTPSeparator,
     InputOTPSlot,
 } from "@/components/ui/input-otp"
-
+import { Toaster, toast } from 'sonner'
 import {
     Select,
     SelectContent,
@@ -76,19 +76,31 @@ const fadeInAnimationVariants = {
 
 export const EntrevistaPage = () => {
 
+    const defaultValues = {
+        username: "",
+        email: "",
+        oficina: "",
+        telefono: ""
+
+    }
     const form = useForm({
         resolver: zodResolver(formSchema),
-        defaultValues: {
-            username: "",
-            email: ""
-        },
+        defaultValues,
     })
 
     function onSubmit(values) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         // alert(JSON.stringify(values))
-
+        toast.success('Tus datos fueron enviados correctamente.', {
+            description: "Nos contactaremos contigo lo antes posible."
+        })
+        form.reset({
+            username: "",
+            email: "",
+            oficina: "",
+            telefono: ""
+        })
         guardarFomulario(values)
     }
 

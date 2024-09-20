@@ -24,7 +24,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-
+import { Toaster, toast } from 'sonner'
 import {
     Form,
     FormControl,
@@ -87,8 +87,17 @@ export const FormularioCaptacion = ({ scrollRef }) => {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
         // alert(JSON.stringify(values))
-
+        toast.success('Tus datos fueron enviados correctamente.', {
+            description: "Nos contactaremos contigo lo antes posible."
+        })
         guardarFomulario(values)
+
+        form.reset({
+            username: "",
+            email: "",
+            oficina: "",
+            telefono: ""
+        })
     }
 
     return (
@@ -126,7 +135,9 @@ export const FormularioCaptacion = ({ scrollRef }) => {
                                                 <FormItem>
                                                     <FormLabel>Nombre y Apellido</FormLabel>
                                                     <FormControl>
-                                                        <Input placeholder="Ingresar nombre" {...field} />
+                                                        <Input onValueChange={field.onChange}
+                                                            value={field.value}
+                                                            defaultValue={field.value} placeholder="Ingresar nombre" {...field} />
                                                     </FormControl>
 
                                                     <FormMessage />
