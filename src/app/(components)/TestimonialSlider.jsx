@@ -79,60 +79,43 @@ const TestimonialSlider = () => {
             className="sm:h-full  w-[100%] md:w-[80%] relative items-center flex justify-center sm:bottom-[80px] mb-[100px] bottom-[100px] h-[80%]"
         >
 
-
             {testimonialData.map((person, index) => {
-
-
 
                 return (
                     <SwiperSlide key={index} >
 
                         <div className="flex flex-col space-x-6 items-center md:flex-row  h-full w-full px-28 ">
 
-                            {/* avatar, name y position */}
                             <div className=" w-full flex flex-col xl:justify-center items-center relative  mx-auto xl:mx-0 ">
 
-                                {/* avatar */}
                                 <div className="mb-2 mx-auto">
-                                    {" "}
                                     <Image
                                         src={person.image}
                                         alt=""
                                         width={100}
                                         height={100}
-                                        className='imagenTestimonios '
-                                    />{" "}
+                                        className='imagenTestimonios'
+                                    />
                                 </div>
-                                {/* name */}
+
                                 <div className="text-lg text-black text-center w-full mb-4">{person.name}</div>
-                                {/* position */}
-                                {/* <div className="text-[12px] text-black uppercase tracking-widest text-center w-[300px] font-normal montserrat">{person.message}</div> */}
+
 
                                 <div className="text-[12px] text-black uppercase font-normal tracking-widest">{person.position}</div>
 
                                 <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
-                                    {/* quote & icon */}
                                     <div className="mb-4">
                                         <FaQuoteLeft className="text-4xl xl:text-6xl text-black/20 mx-auto md:mx-0 " />
                                     </div>
 
-                                    {/* message */}
-                                    <div className="xl:w-[400px] xl:text-lg text-center md:text-left text-black">
+                                    <div className="w-[600px] text-sm xl:w-[400px] xl:text-lg text-center md:text-left text-black">
                                         {person.message}
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-
                         </div>
-
                     </SwiperSlide>
                 );
-
-
             })}
         </Swiper >
     );
