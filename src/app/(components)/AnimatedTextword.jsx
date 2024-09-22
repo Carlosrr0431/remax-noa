@@ -72,7 +72,7 @@ export const AnimatedTextword = ({ text }) => {
             variants={container}
             initial="hidden"
             animate="visible"
-            className="font-normal sm:flex "
+            className="font-normal sm:flex"
         >
             {words.map((word, index) => (
                 <motion.span

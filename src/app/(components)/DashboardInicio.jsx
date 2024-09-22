@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 import { signIn, useSession, signOut } from 'next-auth/react'
 import { useEffect } from "react"
-
+import { FcGoogle } from "react-icons/fc";
 
 export const DashboardInicio = () => {
 
@@ -61,16 +61,16 @@ export const DashboardInicio = () => {
                         <Button
                             onClick={() => {
 
-                                signIn('google', { search, callbackUrl: 'dashboard/administrador' })
+                                signIn('google', { callbackUrl: 'dashboard/administrador' })
 
                             }}
                             variant="outline"
-                            className="w-full bg-white text-black hover:bg-gray-100"
+                            className="w-full bg-white  text-black hover:bg-gray-100"
 
                         >
-                            <GoogleIcon />
+                            <FcGoogle className="w-6 h-6 mr-2" />
 
-                            Iniciar sesión con Google
+                            <span className="text-red-800">Iniciar sesión con Google</span>
                         </Button>
                     </CardContent>
                 </Card>
@@ -97,8 +97,8 @@ export const DashboardInicio = () => {
                                 signIn('google', { callbackUrl: '/dashboard/user' })
                             }}
                         >
-                            <GoogleIcon />
-                            Iniciar sesión con Google
+                            <FcGoogle className="w-6 h-6 mr-2" />
+                            <span className="text-blue-700">Iniciar sesión con Google</span>
                         </Button>
                     </CardContent>
                 </Card>

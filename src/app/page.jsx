@@ -17,6 +17,7 @@ import Image from "next/image";
 import Socials from "./(components)/Socials";
 import Redes from "./(components)/Redes";
 import { FooterSencillo } from "./(components)/FooterSencillo";
+import { FaFly } from "react-icons/fa6";
 
 const fadeInAnimationVariants = {
   initial: (i) => ({
@@ -66,15 +67,15 @@ const Home = () => {
               <span className="">Únete al Éxito con</span> RE/MAX Noa Salta <br />
             </h1> */}
 
-            <AnimatedTextword text="Únete al Éxito con RE/MAX NOA Salta" />
-
+            <AnimatedTextword text="Únete al Éxito con RE/MAX NOA" />
+            <AnimatedTextword text="Salta | Jujuy" />
             <Link href={'#formulario'}>
               {/* <Button class="text-white  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-sky-950 hover:border-transparent rounded-sm" variant="outline">UNIRSE </Button> */}
               <motion.button initial="initial"
                 variants={fadeInAnimationVariants}
                 whileInView="animate"
                 viewport={{ once: true }}
-                custom={1} className="text-white  hover:bg-black/90  font-semibold hover:text-white py-0.5 px-4 bg-sky-950 hover:border-transparent rounded-sm mt-[40px]">
+                custom={1} className="bg-primary text-primary-foreground shadow hover:bg-primary/90 text-white  font-semibold hover:text-white py-0.5 px-4  hover:border-transparent rounded-sm mt-[40px]">
                 UNIRSE
               </motion.button>
             </Link>

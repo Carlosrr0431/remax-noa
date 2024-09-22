@@ -116,7 +116,7 @@ const DashBoard = () => {
                     <div className="grid mr-4 place-items-center">
                       <GiPrayer className="w-5 h-5" />
                     </div>
-                    Cursos
+                    Banners
                   </div>
                   <div role="button"
                     onClick={() => handleClick("Banners Home")
@@ -131,7 +131,7 @@ const DashBoard = () => {
             }
 
 
-            <div role="button"
+            {/* <div role="button"
               onClick={async () => {
                 await signOut({
                   callbackUrl: "/",
@@ -139,11 +139,11 @@ const DashBoard = () => {
               }}
               className={`flex  text-lg w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 text-white focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 mt-[220px] mx-auto ml-8 font-semibold ${panel == 'Contenido' ? 'mt-[390px]' : ''}`}>
               <div className="grid mr-2 place-items-center ">
-                {/* <TbLogout className="w-5 h-5" /> */}
+ 
                 <BiLogOut className="w-5 h-5" />
               </div>
               Salir
-            </div>
+            </div> */}
 
           </nav>
         </div>
@@ -153,6 +153,8 @@ const DashBoard = () => {
           {
             panel == 'Datos' ? (<DashBoardInfo tipo={tipo} />) : panel == 'Contenido' ? ((<DashBoardInfoContenido tipo={tipo} />)) : null
           }
+
+
         </div>
 
 

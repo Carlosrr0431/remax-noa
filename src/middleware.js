@@ -2,9 +2,9 @@ import { withAuth } from "next-auth/middleware";
 
 export default async function middleware(req, event) {
   const authMiddleware = withAuth({
-    pages: {
-      signIn: `/login`,
-    },
+    // pages: {
+    //   signIn: `/login`,
+    // },
 
     callbacks: {
       async authorized({ token }) {
@@ -53,10 +53,5 @@ export default async function middleware(req, event) {
 }
 
 export const config = {
-  matcher: [
-    "/dashboard/administrador",
-    "/dashboard/user",
-    "/user",
-    "/dashboard",
-  ],
+  matcher: ["/dashboard/administrador", "/dashboard/user", "/user"],
 };
