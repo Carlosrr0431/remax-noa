@@ -1,9 +1,5 @@
 // testimonial data
 
-import Imagen1 from '../public/t-avt-1.png'
-import Imagen2 from '../public/t-avt-2.png'
-import Imagen3 from '../public/t-avt-3.png'
-
 import Jimena from '../public/JIMENA CORNEJO (1).jpg'
 import Alejandro from '../public/ALEJANDRO 2 (1).jpg'
 import Matias from '../public/MATIAS FRADEJAS (1).jpg'

@@ -81,10 +81,8 @@ const Home = () => {
             </Link>
           </div>
         </div>
-
-
         <div className="brightness-50 xl:bg-right xl:bg-no-repeat w-full h-full  translate-z-50  absolute inset-0   -z-20">
-          <video src={Video} autoPlay muted loop className="object-cover h-[100%] w-[100%]" />
+          <video src={Video} autoPlay muted loop className="object-cover h-[100%] w-[100%] z-20 absolute" />
 
           {/* <Image src={Degradado}
             width={0}

@@ -11,8 +11,6 @@ import WhatsApp from '../public/whatsapp.svg'
 import { useAppContext } from "../(context)/AppWrapper";
 
 import Home from "../public/inicio icono.svg";
-import Cursos from "../public/cursos online.svg";
-import Planes from "../public/planes presenciales icono.svg";
 import Conocenos from "../public/conocenos icono.svg";
 import Testimonios from "../public/feedback-review_13085382.svg";
 import Contactar from "../public/bubble-discussion_17699776.svg";

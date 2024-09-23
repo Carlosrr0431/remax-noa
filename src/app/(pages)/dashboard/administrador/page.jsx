@@ -78,7 +78,7 @@ const DashBoard = () => {
 
                     <BiMoneyWithdraw className="w-6 h-6 -mr-4" />
                   </div>
-                  Ingresos
+                  Formularios Web
                 </div>
                   {/* <div role="button"
                     onClick={() => handleClick("Control De Ingresos")}
@@ -131,19 +131,19 @@ const DashBoard = () => {
             }
 
 
-            {/* <div role="button"
+            <button type='button'
               onClick={async () => {
                 await signOut({
-                  callbackUrl: "/",
+                  callbackUrl: "/dashboard",
                 })
               }}
-              className={`flex  text-lg w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 text-white focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 mt-[220px] mx-auto ml-8 font-semibold ${panel == 'Contenido' ? 'mt-[390px]' : ''}`}>
+              className={`flex  text-lg w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 text-white focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 mt-[220px] mx-auto ml-8 font-semibold ${panel == 'Datos' ? 'mt-[400px]' : ''}`}>
               <div className="grid mr-2 place-items-center ">
- 
+
                 <BiLogOut className="w-5 h-5" />
               </div>
               Salir
-            </div> */}
+            </button>
 
           </nav>
         </div>
