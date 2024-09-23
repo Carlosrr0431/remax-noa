@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import Ejercicio from '../public/victor-freitas-KkYWWpurqbE-unsplash (1).jpg'
 import Image from 'next/image'
 import axios from 'axios'
 import { signIn } from 'next-auth/react'
