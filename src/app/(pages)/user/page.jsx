@@ -3,9 +3,7 @@ import Accordion from '@/app/(components)/Accordion'
 import SwipperUser from '@/app/(components)/SwipperUser'
 import { useSession } from 'next-auth/react'
 import React, { useEffect, useRef, useState } from 'react'
-import pesas from '../../public/pesa.png'
 import Image from 'next/image'
-import tasas from '../../public/taza.png'
 import { supabaseClient } from '@/supabase/client'
 
 const User = () => {
@@ -111,7 +109,6 @@ const User = () => {
         <div className='w-[320px]  md:w-[350px] min-h-[50px]  mt-10 '>
           <div className="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
             <div className='flex justify-start gap-x-4'>
-              <Image className="w-[25%] h-[25%] " src={pesas} alt="" width={0} height={0} />
               <h2 className="font-semibold mb-2 mt-4 w-full text-white/70 text-[20px]">Dias cumplidos</h2>
             </div>
 
@@ -143,7 +140,6 @@ const User = () => {
         <div className='w-[320px]  md:w-[350px] min-h-[50px]  mt-10 '>
           <div className="p-5 py-2 text-left transform duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer bg-black/50">
             <div className='flex  gap-x-4'>
-              <Image className="w-20 " src={tasas} alt="" width={0} height={0} />
               <h2 className="font-semibold mb-2 mt-4 mx-auto w-full text-white/70 text-[20px]">Puntos obtenidos</h2>
             </div>
 
