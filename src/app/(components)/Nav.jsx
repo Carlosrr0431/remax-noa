@@ -25,15 +25,31 @@ const Nav = () => {
   const pathname = usePathname();
   const { cambioHeader } = useAppContext()
 
+<<<<<<< HEAD
+=======
+  // https://www.facebook.com/remaxnoasalta
+  // https://www.instagram.com/remaxnoa.arg/
+  // https://wa.me/+5493876852073?text=Quiero mas info...
+  // https://www.linkedin.com/company/64931051/admin/dashboard/     **falta el icono
+
+>>>>>>> 7b946be (Mensaje)
   return (
     <nav className={`${pathname == '/dashboard' || pathname == '/login' || pathname == '/dashboard/administrador' || pathname == '/dashboard/user' ? 'hidden' : 'flex'} montserrat  flex-col  items-center xl:justify-center gap-y-4  fixed h-max bottom-0 mt-auto xl:right-[2%]  z-50 w-full top-0 xl:w-12 xl:max-w-md xl:h-[60%] xl:bottom-[150px]`}>
       <div className={` w-full xl:flex-col items-center justify-between xl:justify-center gap-y-7 px-4 md:px-40 xl:px-0 h-[80px]  text-3xl xl:text-xl xl:rounded-full xl:h-max py-4  opacity-80 bg-blend-multiply hidden sm:flex`}>
 
+<<<<<<< HEAD
         <Link href={''} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={Facebook} width={10} height={10} alt="" /> </Link>
 
         <Link href={''} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={Instagram} width={20} height={20} alt="" /> </Link>
         <Link href={''} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={Tiktok} width={20} height={20} alt="" /> </Link>
         <Link href={''} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={WhatsApp} width={20} height={20} alt="" /> </Link>
+=======
+        <Link target="_blank" href={'https://www.facebook.com/remaxnoasalta'} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={Facebook} width={10} height={10} alt="" /> </Link>
+
+        <Link target="_blank" href={'https://www.instagram.com/remaxnoa.arg/'} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={Instagram} width={20} height={20} alt="" /> </Link>
+        <Link target="_blank" href={''} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={Tiktok} width={20} height={20} alt="" /> </Link>
+        <Link target="_blank" href={'https://wa.me/+5493876852073?text=Quiero mas info...'} className="duration-300 transition-all hover:scale-110  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"> <Image src={WhatsApp} width={20} height={20} alt="" /> </Link>
+>>>>>>> 7b946be (Mensaje)
       </div>
 
       <div

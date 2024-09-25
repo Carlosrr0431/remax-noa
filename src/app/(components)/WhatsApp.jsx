@@ -13,7 +13,11 @@ const WhatsApp = () => {
 
     return (
         // fixed right-0 bottom-0 z-50 mb-8 mr-8
+<<<<<<< HEAD
         <div className={`${pathname == '/dashboard' || pathname == '/dashboard/administrador' || pathname == '/dashboard/user' || pathname == '/login' ? 'hidden' : 'block'} `}>
+=======
+        <div className={`${pathname == '/dashboard' || pathname == '/contactanos' || pathname == '/dashboard/administrador' || pathname == '/dashboard/user' || pathname == '/login' ? 'hidden' : 'block'} `}>
+>>>>>>> 7b946be (Mensaje)
             <Link
              
                 rel="noopener noreferrer"

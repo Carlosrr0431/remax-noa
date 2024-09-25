@@ -30,7 +30,11 @@ export const VisionValores2 = () => {
     const [hoveredCard, setHoveredCard] = useState(null)
 
     return (
+<<<<<<< HEAD
         <section className="relative h-full mt-[120px]  ">
+=======
+        <section className="relative h-full  ">
+>>>>>>> 7b946be (Mensaje)
             <div className="absolute inset-0  bg-cover bg-center opacity-10"
                 style={{ transform: `translateY(${hoveredCard === 1 ? -10 : hoveredCard === 2 ? 10 : 0}px)` }}></div>
             <div className="container mx-auto h-full flex items-center justify-center gap-8 px-4">
@@ -39,18 +43,30 @@ export const VisionValores2 = () => {
                     animate={{ x: 0 }}
                     transition={{ type: "spring", stiffness: 100 }}>
                     <Card
+<<<<<<< HEAD
                         className="w-full shadow-md shadow-black h-full bg-gradient-to-br from-blue-500 to-blue-400 text-white overflow-hidden cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 border-none"
+=======
+                        className="w-full shadow-md shadow-black h-full bg-gradient-to-br from-red-500 to-red-400 text-white overflow-hidden cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 border-none"
+>>>>>>> 7b946be (Mensaje)
                         onMouseEnter={() => setHoveredCard(1)}
                         onMouseLeave={() => setHoveredCard(null)}
                     >
                         <CardContent className="flex flex-col justify-between h-full p-8">
                             <div>
 
+<<<<<<< HEAD
                                 <h2 className="text-4xl font-bold mb-4">Se parte de nuestro futuro</h2>
                                 {/* <p className="text-lg opacity-90">Sumérgete en un mundo de posibilidades infinitas. Descubre cómo la tecnología puede transformar tu vida cotidiana.</p> */}
                             </div>
 
                             <div className=" mx-auto">
+=======
+                                <h2 className="text-4xl font-bold mb-4">Sumate a la experiencia REMAX NOA</h2>
+                                {/* <p className="text-lg opacity-90">Sumérgete en un mundo de posibilidades infinitas. Descubre cómo la tecnología puede transformar tu vida cotidiana.</p> */}
+                            </div>
+
+                            {/* <div className=" mx-auto">
+>>>>>>> 7b946be (Mensaje)
                                 <div className="space-y-8">
                                     {features.map((feature, index) => (
                                         <div
@@ -69,7 +85,11 @@ export const VisionValores2 = () => {
                                         </div>
                                     ))}
                                 </div>
+<<<<<<< HEAD
                             </div>
+=======
+                            </div> */}
+>>>>>>> 7b946be (Mensaje)
                             {/* <div className="flex items-center mt-8">
                                 <span className="text-xl font-semibold">Explorar</span>
                                 <ArrowRight className="ml-2" />
@@ -82,6 +102,7 @@ export const VisionValores2 = () => {
                     animate={{ x: 0 }}
                     transition={{ type: "spring", stiffness: 100 }}>
                     <Card
+<<<<<<< HEAD
                         className="w-full h-full bg-gradient-to-br from-cyan-500 to-blue-500 text-white overflow-hidden cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 border-none shadow-md shadow-black"
                         onMouseEnter={() => setHoveredCard(2)}
                         onMouseLeave={() => setHoveredCard(null)}
@@ -90,6 +111,57 @@ export const VisionValores2 = () => {
                             <div className=" xl:bg-right xl:bg-no-repeat w-full h-full  translate-z-50  absolute inset-0   -z-20">
 
 
+=======
+                        className="w-full h-full  text-white overflow-hidden cursor-pointer transition-all duration-300 ease-in-out transform hover:scale-105 border-none border-[1px] border-black shadow-black/40 shadow-lg"
+                        onMouseEnter={() => setHoveredCard(2)}
+                        onMouseLeave={() => setHoveredCard(null)}
+                    >
+                        <CardContent className="p-8 h-full ">
+                            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80"
+                                        alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
+                                        alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2560&amp;q=80"
+                                        alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+                                        alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2762&amp;q=80"
+                                        alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2832&amp;q=80"
+                                        alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg" alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://material-taillwind-pro-ct-tailwind-team.vercel.app/img/content2.jpg" alt="gallery-photo" />
+                                </div>
+                                <div>
+                                    <img class="object-cover object-center w-full h-40 max-w-full rounded-lg"
+                                        src="https://images.unsplash.com/photo-1620064916958-605375619af8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1493&amp;q=80"
+                                        alt="gallery-photo" />
+                                </div>
+>>>>>>> 7b946be (Mensaje)
                             </div>
                         </CardContent>
                     </Card>

@@ -46,11 +46,19 @@ export const Beneficios = ({ scrollNum }) => {
 
     return (
         <div className='w-full h-full bg-none ' >
+<<<<<<< HEAD
             <div className='w-full h-full  bg-none relative sm:-left-[50px] sm:mb-[60px] sm:bottom-[20px] items-center'  >
 
                 <section className="bg-none  md:mt-0  md:py-0 w-full h-full">
                     <div className="container mx-auto px-4">
                         <div className="grid grid-cols-2 sm:gap-8 md:grid-cols-3 justify-center items-center mx-auto gap-x-12">
+=======
+            <div className='w-full h-full left-0 bg-none relative sm:-left-[50px] sm:mb-[100px] sm:bottom-[40px] items-center'  >
+
+                <section className="bg-none  md:mt-0  md:py-0 w-full h-full">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-2 sm:gap-8 md:grid-cols-3 justify-center items-center mx-auto gap-x-12 ml-2">
+>>>>>>> 7b946be (Mensaje)
 
                             {beneficiosArticles.map((article, i) => (
                                 <motion.div key={article.id}

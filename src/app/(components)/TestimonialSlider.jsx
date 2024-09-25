@@ -4,6 +4,14 @@ import Jimena from '../public/JIMENA CORNEJO (1).jpg'
 import Alejandro from '../public/ALEJANDRO 2 (1).jpg'
 import Matias from '../public/MATIAS FRADEJAS (1).jpg'
 import Alberto from '../public/ALBERTO (1).jpg'
+<<<<<<< HEAD
+=======
+import Silvana from '../public/Silvana Paz.jpeg'
+import JuanPablo from '../public/JUAN PABLO 1 (usar esta) (1).jpg'
+import NicoPacheco from '../public/NICO PACHECO 3 (1).jpg'
+
+
+>>>>>>> 7b946be (Mensaje)
 
 const testimonialData = [
 
@@ -35,6 +43,33 @@ const testimonialData = [
         message:
             "Es un trabajo individual en equipo, donde cada uno hace lo que mejor sabe hacer y se complementa con los demás para sinergizar relaciones de confianza y concretar sueños.",
     },
+<<<<<<< HEAD
+=======
+
+    {
+        image: Silvana,
+        name: "Silvana Paz",
+        position: "Agente Inmobilario",
+        message:
+            "En Remax, tengo la oportunidad de gestionar mis horarios y disfrutar de la independencia financiera, sabiendo que siempre cuento con un equipo de trabajo dispuesto a apoyarme.",
+    },
+
+    {
+        image: JuanPablo,
+        name: "Juan Pablo",
+        position: "Agente Inmobilario",
+        message:
+            "Mi experiencia en Remax ha sido muy positiva, con un crecimiento exponencial tanto en mi negocio como en lo personal. Lo que más me gusta de trabajar aquí es la flexibilidad.",
+    },
+
+    {
+        image: NicoPacheco,
+        name: "Nicolas Pacheco",
+        position: "Agente Inmobilario",
+        message:
+            "Ser parte del equipo Remax/Noa ha transformado mi vida personal y profesional. Desde el primer día, me sentí bienvenido en un ambiente laboral muy positivo. "
+    },
+>>>>>>> 7b946be (Mensaje)
 ];
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -61,7 +96,11 @@ const TestimonialSlider = () => {
 
     return (
         <Swiper
+<<<<<<< HEAD
             navigation={true}
+=======
+            // navigation={true}
+>>>>>>> 7b946be (Mensaje)
             pagination={{
                 clickable: true,
 
@@ -71,7 +110,11 @@ const TestimonialSlider = () => {
             autoplay={{
                 delay: 5000
             }}
+<<<<<<< HEAD
             modules={[Navigation, Pagination, Autoplay]}
+=======
+            modules={[Pagination, Autoplay]}
+>>>>>>> 7b946be (Mensaje)
             className="sm:h-full  w-[100%] md:w-[80%] relative items-center flex justify-center sm:bottom-[80px] mb-[100px] bottom-[100px] h-[80%]"
         >
 
@@ -94,6 +137,7 @@ const TestimonialSlider = () => {
                                     />
                                 </div>
 
+<<<<<<< HEAD
                                 <div className="text-lg text-black text-center w-full mb-4">{person.name}</div>
 
 
@@ -105,6 +149,19 @@ const TestimonialSlider = () => {
                                     </div>
 
                                     <div className="w-[600px] text-sm xl:w-[400px] xl:text-lg text-center md:text-left text-black">
+=======
+                                <div className="text-lg text-black text-center w-[400px]  mb-4">{person.name}</div>
+
+
+                                <div className="text-[12px] w-[400px]  mb-[20px] text-black uppercase font-normal tracking-widest flex justify-center text-center">{person.position}</div>
+
+                                <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
+                                    <div className="mb-2 right-[100px] relative sm:right-0 sm:mb-4">
+                                        <FaQuoteLeft className="text-2xl xl:text-4xl text-black/20 mx-auto md:mx-0 " />
+                                    </div>
+
+                                    <div className="w-[300px] text-sm xl:w-[400px] xl:text-lg text-center md:text-left text-black">
+>>>>>>> 7b946be (Mensaje)
                                         {person.message}
                                     </div>
                                 </div>

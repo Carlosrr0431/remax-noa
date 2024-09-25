@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React from 'react'
+=======
+import React, { useState } from 'react'
+>>>>>>> 7b946be (Mensaje)
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { ProgramarEntrevista2 } from './ProgramarEntrevista2'
@@ -38,6 +42,29 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 
+<<<<<<< HEAD
+=======
+import { FileUploader } from 'react-drag-drop-files';
+import { HiOutlineXMark } from 'react-icons/hi2';
+
+const override = {
+    display: "block",
+    margin: "0 auto",
+    borderColor: "red",
+};
+
+
+const fileTypes = ["JPG", "PNG", "PDF"];
+const MAX_FILE_SIZE = 10000000000;
+
+// function checkFileType(file) {
+//     if (file?.name) {
+//         const fileType = file.name.split(".").pop();
+//         if (fileType === "docx" || fileType === "pdf") return true;
+//     }
+//     return false;
+// }
+>>>>>>> 7b946be (Mensaje)
 
 const formSchema = z.object({
     username: z.string().min(2, {
@@ -50,7 +77,17 @@ const formSchema = z.object({
 
     oficina: z.string({ required_error: "Es necesario seleccionar una oficina" }),
 
+<<<<<<< HEAD
     telefono: z.string({ required_error: "Es necesario ingresar el telefono" })
+=======
+    telefono: z.string({ required_error: "Es necesario ingresar el telefono" }),
+
+    cv: z
+        .any()
+        .refine((file) => file?.length !== 0, "File is required")
+        .refine((file) => file.size < MAX_FILE_SIZE, "Max size is 5MB.")
+        // .refine((file) => checkFileType(file), "Only .pdf, .docx formats are supported.")
+>>>>>>> 7b946be (Mensaje)
 })
 
 import { motion } from "framer-motion";
@@ -75,12 +112,21 @@ const fadeInAnimationVariants = {
 }
 
 export const EntrevistaPage = () => {
+<<<<<<< HEAD
 
+=======
+    const [file, setFile] = useState(null);
+>>>>>>> 7b946be (Mensaje)
     const defaultValues = {
         username: "",
         email: "",
         oficina: "",
+<<<<<<< HEAD
         telefono: ""
+=======
+        telefono: "",
+        cv: ""
+>>>>>>> 7b946be (Mensaje)
 
     }
     const form = useForm({
@@ -99,11 +145,25 @@ export const EntrevistaPage = () => {
             username: "",
             email: "",
             oficina: "",
+<<<<<<< HEAD
             telefono: ""
+=======
+            telefono: "",
+            cv: ""
+>>>>>>> 7b946be (Mensaje)
         })
         guardarFomulario(values)
     }
 
+<<<<<<< HEAD
+=======
+    const handleChange = (file) => {
+
+        console.log(file);
+        setFile(file);
+    };
+
+>>>>>>> 7b946be (Mensaje)
     return (
         <div className="flex h-screen  w-full">
             {/* Mitad izquierda */}
@@ -132,7 +192,11 @@ export const EntrevistaPage = () => {
                     className="p-0 mt-[1000px] sm:p-6  sm:mt-[100px] sm:mx-auto items-center">
                     <Form {...form} >
                         <form onSubmit={form.handleSubmit(onSubmit)} className="">
+<<<<<<< HEAD
                             <Card className="w-full mb-[50px] max-w-md mx-auto relative bottom-[50px] border-[1px] border-black/30">
+=======
+                            <Card className="w-full mb-[100px] sm:mb-0 max-w-md mx-auto relative bottom-[50px] border-[1px] border-black/30">
+>>>>>>> 7b946be (Mensaje)
                                 <CardHeader>
                                     <CardTitle className="text-2xl font-bold text-center">Ingresá tus datos</CardTitle>
                                 </CardHeader>
@@ -248,6 +312,30 @@ export const EntrevistaPage = () => {
                                             )}
                                         />
                                     </div>
+<<<<<<< HEAD
+=======
+
+                                    <div className="space-y-2">
+
+                                        <FormField
+                                            control={form.control}
+                                            name="cv"
+                                            id="cv"
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel>CV</FormLabel>
+                                                    <FormControl>
+                                                        <Input placeholder="Ingresar nombre" {...field} type="file" />
+                                                    </FormControl>
+
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
+                                        />
+
+
+                                    </div>
+>>>>>>> 7b946be (Mensaje)
                                 </CardContent>
 
                                 <CardFooter>

@@ -12,12 +12,18 @@ import { motion } from "framer-motion";
 import { VisionValores } from "./(components)/VisionValores";
 import { VisionValores2 } from "./(components)/VisionValores2";
 import { SwiperOficina } from "./(components)/SwiperOficinas";
+<<<<<<< HEAD
 import Logo from './public/LOGO REMAX.svg'
 import Image from "next/image";
 import Socials from "./(components)/Socials";
 import Redes from "./(components)/Redes";
 import { FooterSencillo } from "./(components)/FooterSencillo";
 import { FaFly } from "react-icons/fa6";
+=======
+import { FooterSencillo } from "./(components)/FooterSencillo";
+import { FaArrowUp } from "react-icons/fa";
+import { AiOutlineUp } from "react-icons/ai";
+>>>>>>> 7b946be (Mensaje)
 
 const fadeInAnimationVariants = {
   initial: (i) => ({
@@ -36,6 +42,11 @@ const fadeInAnimationVariants = {
   )
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 7b946be (Mensaje)
 const Home = () => {
 
   const container = useRef()
@@ -46,9 +57,15 @@ const Home = () => {
   const handleScroll = () => {
 
     setScroll(container.current.scrollTop);
+<<<<<<< HEAD
     if (scroll >= 100 && scroll <= 150) {
       setCambioHeader(true)
     } else if (scroll <= 50) {
+=======
+    if (scroll >= 100 && scroll <= 500) {
+      setCambioHeader(true)
+    } else if (scroll <= 99) {
+>>>>>>> 7b946be (Mensaje)
       setCambioHeader(false)
     }
   }
@@ -130,6 +147,13 @@ const Home = () => {
         <TestimonialSlider />
       </section>
 
+<<<<<<< HEAD
+=======
+      {/* <section id="nosotros" className="h-screen mt-[50px] mb-[50px] w-[95%] mx-auto    sm:rounded-[100px] rounded-[100px]">
+        <VisionValores2 />
+      </section> */}
+
+>>>>>>> 7b946be (Mensaje)
       <section className="mb-[80px] sm:mb-0">
         <FooterSencillo />
       </section>
@@ -170,7 +194,16 @@ const Home = () => {
 
       </footer> */}
 
+<<<<<<< HEAD
 
+=======
+      {
+
+        (scroll >= 300 && <div className="cursor-pointer fixed bottom-0 xl:mb-8 xl:ml-8 mb-24 ml-8  p-4 rounded-[100%] w-15 h-15 bg-black/80 z-50" onClick={() => container.current.scrollTop = 0}>
+          <AiOutlineUp />
+        </div>)
+      }
+>>>>>>> 7b946be (Mensaje)
     </main >
   );
 };

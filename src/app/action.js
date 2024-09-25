@@ -26,13 +26,20 @@ export async function guardarFomulario(datos) {
     }
   );
 
+<<<<<<< HEAD
   console.log(datos);
+=======
+>>>>>>> 7b946be (Mensaje)
 
   const result3 = await supabase.from("formularioIngreso").insert({
     nombre: datos.username,
     email: datos.email,
     oficina: datos.oficina,
     telefono: datos.telefono,
+<<<<<<< HEAD
+=======
+    cv: datos.cv
+>>>>>>> 7b946be (Mensaje)
   });
 
   console.log(result3);
