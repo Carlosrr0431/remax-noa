@@ -12,26 +12,13 @@ import { MessageCircle } from "lucide-react"
 
 import Logo from '../public/LOGO REMAX.svg'
 import { useAppContext } from "../(context)/AppWrapper";
-<<<<<<< HEAD
-=======
 import { motion, useAnimationControls } from 'framer-motion'
 import { useEffect, useState } from "react";
->>>>>>> 7b946be (Mensaje)
 
 const Header = () => {
 
   const pathname = usePathname();
   const { cambioHeader } = useAppContext()
-<<<<<<< HEAD
-
-  return (
-    <div  >
-      <header className={`${pathname == '/user' || pathname == '/cursos' || pathname == '/contactanos' || pathname == '/ubicacion' || pathname == '/dashboard/administrador' || pathname == '/dashboard' || pathname == '/dashboard/user' || pathname == '/eventos' || pathname == '/login' ? 'hidden' : ''} absolute z-50  w-full flex items-center   xl:h-[100px]`}>
-        <div className="container mx-auto">
-          <div className="items-center relative flex flex-col sm:flex-row sm:justify-between sm:items-center gap-y-8 py-8">
-            <div className="">
-              <Link href="/" >
-=======
   const [isHovered, setIsHovered] = useState(false)
   const controls = useAnimationControls()
 
@@ -55,7 +42,6 @@ const Header = () => {
           <div className="items-center relative flex flex-col sm:flex-row sm:justify-between sm:items-center gap-y-8 py-8">
             <div className="">
               <Link href="/#inicio" >
->>>>>>> 7b946be (Mensaje)
 
                 <Image
                   src={Logo}
@@ -74,10 +60,6 @@ const Header = () => {
 
             <Socials />
 
-<<<<<<< HEAD
-            <div className="order-first relative left-[85px] sm:left-[70px]  sm:order-none">
-              {/* <Loguear /> */}<Link href="/contactanos">
-=======
             {/* <div className="order-first relative left-[85px] sm:left-[70px]  sm:order-none">
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -128,16 +110,11 @@ const Header = () => {
 
             {/* <div className="order-first relative left-[85px] sm:left-[70px]  sm:order-none">
               <Link href="/contactanos">
->>>>>>> 7b946be (Mensaje)
                 <Button variant="default" className="flex items-center space-x-2 rounded-[20px]">
                   <MessageCircle className="w-4 h-4" />
                   <span>Contáctanos</span>
                 </Button></Link>
-<<<<<<< HEAD
-            </div>
-=======
             </div> */}
->>>>>>> 7b946be (Mensaje)
 
           </div>
         </div>

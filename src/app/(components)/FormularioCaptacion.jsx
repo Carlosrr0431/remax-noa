@@ -101,20 +101,12 @@ export const FormularioCaptacion = ({ scrollRef }) => {
     }
 
     return (
-<<<<<<< HEAD
-        <div className="max-w-full mx-auto p-6 bg-white   h-screen"  >
-=======
         <div className="p-2 max-w-full mx-auto sm:p-6 bg-white   h-screen"  >
->>>>>>> 7b946be (Mensaje)
             <CardHeader className="mb-10">
                 <CardTitle className="text-2xl font-bold text-center text-black">Únete a nuestro equipo de Agentes</CardTitle>
             </CardHeader>
 
-<<<<<<< HEAD
-            <div className="grid grid-cols-1 md:grid-cols-2 w-full h-full  items-center justify-center">
-=======
             <div className=" grid grid-cols-1 md:grid-cols-2 w-full h-full  items-center justify-center">
->>>>>>> 7b946be (Mensaje)
 
                 <motion.div
 
@@ -124,11 +116,7 @@ export const FormularioCaptacion = ({ scrollRef }) => {
                     whileInView="animate"
                     viewport={{ once: true }}
                     custom={1}
-<<<<<<< HEAD
-                    className="p-0 sm:p-6 sm:mb-[80px]">
-=======
                     className="p-0 sm:p-6 sm:mb-[80px] order-2 mt-[120px] sm:mt-0">
->>>>>>> 7b946be (Mensaje)
                     <Form {...form} >
                         <form onSubmit={form.handleSubmit(onSubmit)} className="">
                             <Card className="w-full max-w-md mx-auto relative bottom-[50px] border-[1px] border-black/30">
@@ -261,15 +249,11 @@ export const FormularioCaptacion = ({ scrollRef }) => {
 
                 </motion.div>
 
-<<<<<<< HEAD
-                <Beneficios />
-=======
 
                 <div className="order-1 sm:order-2">
                     <Beneficios />
                 </div>
 
->>>>>>> 7b946be (Mensaje)
             </div>
         </div>
     )
